@@ -1,0 +1,222 @@
+<?xml version="1.0"?>
+
+<!-- SF (Street Fighter) Layout file with multiple bezel options -->
+
+<mamelayout version="2">
+	
+	<!-- SF bezels -->
+	<element name="border">
+		<image file="sf_bezel_43.png"/>
+	</element>
+	<element name="border_ws">
+		<image file="sf_bezel_ws.png"/>
+	</element>
+	
+	<!-- Overlay elements -->
+	<element name="overlay_day">
+  		<image file="..\overlayDay.png"/>
+	</element>
+	<element name="overlay_day_ws">
+  		<image file="..\overlayDayWS.png"/>
+	</element>
+
+	<!-- Overlay elements -->
+	<element name="overlay_night">
+  		<image file="..\overlayNight.png"/>
+	</element>
+	<element name="overlay_night_ws">
+  		<image file="..\overlayNightWS.png"/>
+	</element>
+	
+	<element name="portrait_left" defstate="0x20">
+		<!-- Base character states for original Street Fighter -->
+		<image state="0x00" file="Ken 01 - leftCenter.png" />     <!-- Ken -->
+		<image state="0x01" file="Ryu 01 - leftCenter.png" />     <!-- Ryu -->
+		
+		<image state="0x20" file="blank.png" />
+	</element>
+	<element name="portrait_right" defstate="0x20">
+		<!-- Base character states for original Street Fighter -->
+		<image state="0x00" file="Ken 01 - rightCenter.png" />    <!-- Ken -->
+		<image state="0x01" file="Ryu 01 - rightCenter.png" />    <!-- Ryu -->
+		
+		<image state="0x20" file="blank.png" />
+	</element>
+	<!-- SF 4:3 Bezel View -->
+	<view name="SF Bezel 4:3">
+		<!-- Base bezel -->
+		<element ref="border">
+			<bounds x="20" y="0" width="1880" height="1080"/>
+		</element>
+		<screen index="0">
+			<bounds x="240" y="0" width="1440" height="1080"/>
+		</screen>
+		<!-- Add overlayDay on top of bezel -->
+		<element ref="overlay_day">
+			<bounds x="0" y="0" width="1920" height="1080"/>
+		</element>
+		<!-- Left portrait -->
+		<element id="pt_p1" ref="portrait_left">
+			<bounds x="35" y="5" width="180" height="953"/>
+		</element>
+		<!-- Right portrait -->
+		<element id="pt_p2" ref="portrait_right">
+			<bounds x="1705" y="5" width="180" height="953"/>
+		</element>
+	</view>
+
+	<!-- SF Widescreen Bezel View -->
+	<view name="SF Bezel WS">
+		<element ref="border_ws">
+			<bounds x="0" y="0" width="1920" height="1080"/>
+		</element>
+		<screen index="0">
+			<bounds x="190" y="0" width="1541" height="1080" />
+		</screen>
+		<!-- Add overlayDayWS on top of bezel -->
+		<element ref="overlay_day_ws">
+			<bounds x="0" y="0" width="1920" height="1080"/>
+		</element>
+		<element id="pt_p1" ref="portrait_left">
+			<bounds x="10" y="5" width="160" height="953"/>
+		</element>
+		<element id="pt_p2" ref="portrait_right">
+			<bounds x="1750" y="5" width="160" height="953"/>
+		</element>
+	</view>
+
+	<!-- SF 4:3 Bezel Dark View -->
+	<view name="SF Bezel 4:3 Dark">
+		<!-- Base bezel -->
+		<element ref="border">
+			<bounds x="20" y="0" width="1880" height="1080"/>
+		</element>
+		<screen index="0">
+			<bounds x="240" y="0" width="1440" height="1080"/>
+		</screen>
+		<!-- Add overlayNight on top of bezel -->
+		<element ref="overlay_night">
+			<bounds x="0" y="0" width="1920" height="1080"/>
+		</element>
+		<!-- Left portrait -->
+		<element id="pt_p1" ref="portrait_left">
+			<bounds x="35" y="5" width="180" height="953"/>
+		</element>
+		<!-- Right portrait -->
+		<element id="pt_p2" ref="portrait_right">
+			<bounds x="1705" y="5" width="180" height="953"/>
+		</element>
+	</view>
+
+	<!-- SF Widescreen Bezel Dark View -->
+	<view name="SF Bezel WS Dark">
+		<element ref="border_ws">
+			<bounds x="0" y="0" width="1920" height="1080"/>
+		</element>
+		<screen index="0">
+			<bounds x="190" y="0" width="1541" height="1080" />
+		</screen>
+		<!-- Add overlayNightWS on top of bezel -->
+		<element ref="overlay_night_ws">
+			<bounds x="0" y="0" width="1920" height="1080"/>
+		</element>
+		<element id="pt_p1" ref="portrait_left">
+			<bounds x="10" y="5" width="160" height="953"/>
+		</element>
+		<element id="pt_p2" ref="portrait_right">
+			<bounds x="1750" y="5" width="160" height="953"/>
+		</element>
+	</view>
+
+	<script><![CDATA[
+		file:set_resolve_tags_callback(
+			function()
+				local cpu = file.device:subdevice(":maincpu")
+				local mem = cpu.spaces["program"]
+				
+				-- Function to setup character portraits for a view
+				local function setup_view_portraits(view_name)
+					local view = file.views[view_name]
+					if not view then return end
+					
+					local p1char = view.items["pt_p1"]
+					local p2char = view.items["pt_p2"]
+					if not p1char or not p2char then return end
+					
+					-- Variant override memory locations for SF
+					local p1_override_active = 0xFFFF90
+					local p1_override_state = 0xFFFF91
+					local p2_override_active = 0xFFFF92
+					local p2_override_state = 0xFFFF93
+					
+					-- Debug counter
+					local debug_counter = 1
+					
+					view:set_prepare_items_callback(
+						function()
+							debug_counter = debug_counter + 1
+							local p1_state, p2_state
+							
+							-- Check P1 variant override first
+							local p1_override = mem:read_u8(p1_override_active)
+							if p1_override == 1 then
+								p1_state = mem:read_u8(p1_override_state)
+								-- Debug when override is active
+								if debug_counter % 30 == 0 then
+									print(string.format("DEBUG SF %s: Frame %d - P1 Override ACTIVE, State=0x%02X", 
+										view_name, debug_counter, p1_state))
+								end
+							else
+								-- SF character detection - simplified approach
+								-- Check if game is active by looking at energy values
+								local p1_energy = mem:read_u16(0xFF86B6)
+								local p2_energy = mem:read_u16(0xFF86E0)
+								
+								if p1_energy > 0 or p2_energy > 0 then
+									-- Game is active, default to Ken
+									p1_state = 0x00
+								else
+									-- No game active
+									p1_state = 0x20
+								end
+								
+								-- Debug when no override
+								if debug_counter % 60 == 0 then
+									print(string.format("DEBUG SF %s: Frame %d - P1 Override=%d, State=0x%02X, P1Energy=%d, P2Energy=%d", 
+										view_name, debug_counter, p1_override, p1_state, p1_energy, p2_energy))
+								end
+							end
+							
+							-- Check P2 variant override
+							local p2_override = mem:read_u8(p2_override_active)
+							if p2_override == 1 then
+								p2_state = mem:read_u8(p2_override_state)
+							else
+								-- SF P2 character detection - simplified approach
+								local p1_energy = mem:read_u16(0xFF86B6)
+								local p2_energy = mem:read_u16(0xFF86E0)
+								
+								if p1_energy > 0 or p2_energy > 0 then
+									-- Game is active, default to Ryu
+									p2_state = 0x01
+								else
+									-- No game active
+									p2_state = 0x20
+								end
+							end
+							
+							p1char:set_state(p1_state)
+							p2char:set_state(p2_state)
+						end
+					)
+				end
+				
+				-- Setup portraits for all views
+				setup_view_portraits("SF Bezel 4:3")
+				setup_view_portraits("SF Bezel WS")
+				setup_view_portraits("SF Bezel 4:3 Dark")
+				setup_view_portraits("SF Bezel WS Dark")
+			end
+		)
+	]]></script>
+</mamelayout>

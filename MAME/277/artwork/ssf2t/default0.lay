@@ -1,0 +1,270 @@
+<?xml version="1.0"?>
+
+<!-- SSF2T Layout file based on cheat file and available images -->
+
+<mamelayout version="2">
+	
+	<!-- SSF2T bezels -->
+	<element name="border">
+		<image file="ssf2t_bezel_43.png"/>
+	</element>
+	<element name="border_ws">
+		<image file="ssf2t_bezel_ws.png"/>
+	</element>
+	
+	<!-- Overlay elements -->
+	<element name="overlay_day">
+  		<image file="..\overlayDay.png"/>
+	</element>
+	<element name="overlay_day_ws">
+  		<image file="..\overlayDayWS.png"/>
+	</element>
+
+	<!-- Overlay elements -->
+	<element name="overlay_night">
+  		<image file="..\overlayNight.png"/>
+	</element>
+	<element name="overlay_night_ws">
+  		<image file="..\overlayNightWS.png"/>
+	</element>
+
+	<element name="portrait_left" defstate="0x20">
+		<!-- Base character states from cheat file (0x00-0x0F) -->
+		<image state="0x00" file="Ryu 01 - leftCenter.png" />
+		<image state="0x01" file="E Honda 01 - leftCenter.png" />
+		<image state="0x02" file="Blanka 01 - leftCenter.png" />
+		<image state="0x03" file="Guile 01 - leftCenter.png" />
+		<image state="0x04" file="Ken 01 - leftCenter.png" />
+		<image state="0x05" file="Chun Li 01 - leftCenter.png" />
+		<image state="0x06" file="Zangief 01 - leftCenter.png" />
+		<image state="0x07" file="Dhalsim 01 - leftCenter.png" />
+		<image state="0x08" file="M Bison 01 - leftCenter.png" />
+		<image state="0x09" file="Sagat 01 - leftCenter.png" />
+		<image state="0x0A" file="Balrog 01 - leftCenter.png" />
+		<image state="0x0B" file="Vega 01 - leftCenter.png" />
+		<image state="0x0C" file="Cammy 01 - leftCenter.png" />
+		<image state="0x0D" file="T Hawk 01 - leftCenter.png" />
+		<image state="0x0E" file="Fei Long 01 - leftCenter.png" />
+		<image state="0x0F" file="Dee Jay 01 - leftCenter.png" />
+		
+		<!-- Additional variants for characters with multiple images in names.txt -->
+		<image state="0x30" file="Ryu 02 - leftCenter.png" />         <!-- Ryu 02 -->
+		<image state="0x31" file="E Honda 02 - leftCenter.png" />     <!-- E Honda 02 -->
+		<image state="0x32" file="Blanka 02 - leftCenter.png" />      <!-- Blanka 02 -->
+		<image state="0x33" file="Guile 02 - leftCenter.png" />       <!-- Guile 02 -->
+		<image state="0x34" file="Ken 02 - leftCenter.png" />         <!-- Ken 02 -->
+		<image state="0x35" file="Chun Li 02 - leftCenter.png" />     <!-- Chun Li 02 -->
+		<image state="0x36" file="Zangief 02 - leftCenter.png" />     <!-- Zangief 02 -->
+		<image state="0x37" file="Zangief 03 - leftCenter.png" />     <!-- Zangief 03 -->
+		<image state="0x38" file="Dhalsim 02 - leftCenter.png" />     <!-- Dhalsim 02 -->
+		<image state="0x39" file="Balrog 02 - leftCenter.png" />      <!-- Balrog 02 -->
+		<image state="0x3A" file="Vega 02 - leftCenter.png" />        <!-- Vega 02 -->
+		<image state="0x3B" file="Cammy 02 - leftCenter.png" />       <!-- Cammy 02 -->
+		<image state="0x3C" file="T Hawk 02 - leftCenter.png" />      <!-- T Hawk 02 -->
+		<image state="0x3D" file="Fei Long 02 - leftCenter.png" />    <!-- Fei Long 02 -->
+		
+		<!-- Akuma variants (0x10 is the character ID for Akuma) -->
+		<image state="0x10" file="Akuma 01 - leftCenter.png" />       <!-- Akuma 01 -->
+		<image state="0x40" file="Akuma 02 - leftCenter.png" />       <!-- Akuma 02 -->
+		<image state="0x41" file="Akuma 03 - leftCenter.png" />       <!-- Akuma 03 -->
+		
+		<image state="0x20" file="blank.png" />
+	</element>
+	<element name="portrait_right" defstate="0x20">
+		<!-- Base character states from cheat file (0x00-0x0F) -->
+		<image state="0x00" file="Ryu 01 - rightCenter.png" />
+		<image state="0x01" file="E Honda 01 - rightCenter.png" />
+		<image state="0x02" file="Blanka 01 - rightCenter.png" />
+		<image state="0x03" file="Guile 01 - rightCenter.png" />
+		<image state="0x04" file="Ken 01 - rightCenter.png" />
+		<image state="0x05" file="Chun Li 01 - rightCenter.png" />
+		<image state="0x06" file="Zangief 01 - rightCenter.png" />
+		<image state="0x07" file="Dhalsim 01 - rightCenter.png" />
+		<image state="0x08" file="M Bison 01 - rightCenter.png" />
+		<image state="0x09" file="Sagat 01 - rightCenter.png" />
+		<image state="0x0A" file="Balrog 01 - rightCenter.png" />
+		<image state="0x0B" file="Vega 01 - rightCenter.png" />
+		<image state="0x0C" file="Cammy 01 - rightCenter.png" />
+		<image state="0x0D" file="T Hawk 01 - rightCenter.png" />
+		<image state="0x0E" file="Fei Long 01 - rightCenter.png" />
+		<image state="0x0F" file="Dee Jay 01 - rightCenter.png" />
+		
+		<!-- Additional variants for characters with multiple images in names.txt -->
+		<image state="0x42" file="Ryu 02 - rightCenter.png" />        <!-- Ryu 02 -->
+		<image state="0x43" file="E Honda 02 - rightCenter.png" />    <!-- E Honda 02 -->
+		<image state="0x44" file="Blanka 02 - rightCenter.png" />     <!-- Blanka 02 -->
+		<image state="0x45" file="Guile 02 - rightCenter.png" />      <!-- Guile 02 -->
+		<image state="0x46" file="Ken 02 - rightCenter.png" />        <!-- Ken 02 -->
+		<image state="0x47" file="Chun Li 02 - rightCenter.png" />    <!-- Chun Li 02 -->
+		<image state="0x48" file="Zangief 02 - rightCenter.png" />    <!-- Zangief 02 -->
+		<image state="0x49" file="Zangief 03 - rightCenter.png" />    <!-- Zangief 03 -->
+		<image state="0x4A" file="Dhalsim 02 - rightCenter.png" />    <!-- Dhalsim 02 -->
+		<image state="0x4B" file="Balrog 02 - rightCenter.png" />     <!-- Balrog 02 -->
+		<image state="0x4C" file="Vega 02 - rightCenter.png" />       <!-- Vega 02 -->
+		<image state="0x4D" file="Cammy 02 - rightCenter.png" />      <!-- Cammy 02 -->
+		<image state="0x4E" file="T Hawk 02 - rightCenter.png" />     <!-- T Hawk 02 -->
+		<image state="0x4F" file="Fei Long 02 - rightCenter.png" />   <!-- Fei Long 02 -->
+		
+		<!-- Akuma variants (0x10 is the character ID for Akuma) -->
+		<image state="0x10" file="Akuma 01 - rightCenter.png" />      <!-- Akuma 01 -->
+		<image state="0x50" file="Akuma 02 - rightCenter.png" />      <!-- Akuma 02 -->
+		<image state="0x51" file="Akuma 03 - rightCenter.png" />      <!-- Akuma 03 -->
+		
+		<image state="0x20" file="blank.png" />
+	</element>
+
+	<!-- SSF2T Widescreen Bezel View -->
+	<view name="SSF2T Bezel WS">
+		<element ref="border_ws">
+			<bounds x="0" y="0" width="1920" height="1080"/>
+		</element>
+		<screen index="0">
+			<bounds x="190" y="0" width="1541" height="1080" />
+		</screen>
+		<!-- Add overlayDayWS on top of bezel -->
+		<element ref="overlay_day_ws">
+			<bounds x="0" y="0" width="1920" height="1080"/>
+		</element>
+		<element id="pt_p1" ref="portrait_left">
+			<bounds x="10" y="5" width="160" height="953"/>
+		</element>
+		<element id="pt_p2" ref="portrait_right">
+			<bounds x="1750" y="5" width="160" height="953"/>
+		</element>
+	</view>
+
+	<!-- SSF2T 4:3 Bezel Dark View -->
+	<view name="SSF2T Bezel 4:3 Dark">
+		<!-- Base bezel -->
+		<element ref="border">
+			<bounds x="20" y="0" width="1880" height="1080"/>
+		</element>
+		<screen index="0">
+			<bounds x="240" y="0" width="1440" height="1080"/>
+		</screen>
+		<!-- Add overlayNight on top of bezel -->
+		<element ref="overlay_night">
+			<bounds x="0" y="0" width="1920" height="1080"/>
+		</element>
+		<!-- Left portrait -->
+		<element id="pt_p1" ref="portrait_left">
+			<bounds x="35" y="5" width="180" height="953"/>
+		</element>
+		<!-- Right portrait -->
+		<element id="pt_p2" ref="portrait_right">
+			<bounds x="1705" y="5" width="180" height="953"/>
+		</element>
+	</view>
+
+	<!-- SSF2T Widescreen Bezel Dark View -->
+	<view name="SSF2T Bezel WS Dark">
+		<element ref="border_ws">
+			<bounds x="0" y="0" width="1920" height="1080"/>
+		</element>
+		<screen index="0">
+			<bounds x="190" y="0" width="1541" height="1080" />
+		</screen>
+		<!-- Add overlayNightWS on top of bezel -->
+		<element ref="overlay_night_ws">
+			<bounds x="0" y="0" width="1920" height="1080"/>
+		</element>
+		<element id="pt_p1" ref="portrait_left">
+			<bounds x="10" y="5" width="160" height="953"/>
+		</element>
+		<element id="pt_p2" ref="portrait_right">
+			<bounds x="1750" y="5" width="160" height="953"/>
+		</element>
+	</view>
+    <script><![CDATA[
+		file:set_resolve_tags_callback(
+			function()
+				local cpu = file.device:subdevice(":maincpu")
+				local mem = cpu.spaces["program"]
+				
+				-- Function to setup character portraits for a view
+				local function setup_view_portraits(view_name)
+					local view = file.views[view_name]
+					if not view then return end
+					
+					local p1char = view.items["pt_p1"]
+					local p2char = view.items["pt_p2"]
+					if not p1char or not p2char then return end
+					
+					-- Variant override memory locations for SSF2T
+					local p1_override_active = 0xFFFF70
+					local p1_override_state = 0xFFFF71
+					local p2_override_active = 0xFFFF72
+					local p2_override_state = 0xFFFF73
+					
+					-- Debug counter
+					local debug_counter = 0
+					
+					view:set_prepare_items_callback(
+						function()
+							debug_counter = debug_counter + 1
+							local p1_state, p2_state
+							
+							-- Debug every 60 frames
+							if debug_counter % 60 == 0 then
+								local p1_override = mem:read_u8(p1_override_active)
+								local p1_override_val = mem:read_u8(p1_override_state)
+								local p1_char = mem:read_u8(0xFF87DF)
+								local p1_akuma = mem:read_u8(0xFF880B)
+								print(string.format("DEBUG SSF2T %s: Frame %d - P1 Override=%d, State=0x%02X, Char=0x%02X, Akuma=%d", 
+									view_name, debug_counter, p1_override, p1_override_val, p1_char, p1_akuma))
+							end
+							
+							-- Check P1 variant override
+							local p1_override = mem:read_u8(p1_override_active)
+							if p1_override == 1 then
+								p1_state = mem:read_u8(p1_override_state)
+								if debug_counter % 60 == 0 then
+									print(string.format("DEBUG SSF2T %s: Using P1 override 0x%02X", view_name, p1_state))
+								end
+							else
+								-- SSF2T character detection - check for Akuma first
+								local p1_akuma = mem:read_u8(0xFF880B)
+								if p1_akuma == 1 then
+									p1_state = 0x10  -- Akuma
+								else
+									p1_state = mem:read_u8(0xFF87DF) -- P1 character from cheat
+									-- Only blank if character is invalid
+									if p1_state > 0x0F then
+										p1_state = 0x20
+									end
+								end
+							end
+							
+							-- Check P2 variant override
+							local p2_override = mem:read_u8(p2_override_active)
+							if p2_override == 1 then
+								p2_state = mem:read_u8(p2_override_state)
+							else
+								-- SSF2T P2 character detection - check for Akuma first
+								local p2_akuma = mem:read_u8(0xFF8C0B)
+								if p2_akuma == 1 then
+									p2_state = 0x10  -- Akuma
+								else
+									p2_state = mem:read_u8(0xFF8BDF) -- P2 character from cheat
+									-- Only blank if character is invalid
+									if p2_state > 0x0F then
+										p2_state = 0x20
+									end
+								end
+							end
+							
+							p1char:set_state(p1_state)
+							p2char:set_state(p2_state)
+						end
+					)
+				end
+				
+				-- Setup portraits for all views
+				setup_view_portraits("SSF2T Bezel 4:3")
+				setup_view_portraits("SSF2T Bezel WS")
+				setup_view_portraits("SSF2T Bezel 4:3 Dark")
+				setup_view_portraits("SSF2T Bezel WS Dark")
+			end
+		)
+	]]></script>
+</mamelayout>

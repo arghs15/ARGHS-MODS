@@ -1,0 +1,205 @@
+<?xml version="1.0"?>
+
+<!-- MK Layout file based on cheat file and available images -->
+
+<mamelayout version="2">
+	<!-- MK bezels -->
+	<element name="border">
+		<image file="mk_bezel_43.png"/>
+	</element>
+	<element name="border_ws">
+		<image file="mk_bezel_ws.png"/>
+	</element>
+	
+	<!-- Overlay elements -->
+	<element name="overlay_day">
+  		<image file="..\overlayDay.png"/>
+	</element>
+	<element name="overlay_day_ws">
+  		<image file="..\overlayDayWS.png"/>
+	</element>
+
+	<!-- Overlay elements -->
+	<element name="overlay_night">
+  		<image file="..\overlayNight.png"/>
+	</element>
+	<element name="overlay_night_ws">
+  		<image file="..\overlayNightWS.png"/>
+	</element>
+	
+	<element name="portrait_left" defstate="0x20">
+		<!-- Base character states from cheat file -->
+		<image state="0x00" file="Johnny Cage 01 - leftCenter.png" />
+		<image state="0x01" file="Kano 01 - leftCenter.png" />
+		<image state="0x02" file="Raiden 01 - leftCenter.png" />
+		<image state="0x03" file="Liu Kang 01 - leftCenter.png" />
+		<image state="0x04" file="Scorpion 01 - leftCenter.png" />
+		<image state="0x05" file="Sub Zero 01 - leftCenter.png" />
+		<image state="0x06" file="Sonia 01 - leftCenter.png" />
+		<image state="0x07" file="blank.png" />  <!-- Goro - no image available -->
+		<image state="0x08" file="blank.png" />  <!-- Shang Tsung - no image available -->
+		
+		<image state="0x20" file="blank.png" />
+	</element>
+	<element name="portrait_right" defstate="0x20">
+		<!-- Base character states from cheat file -->
+		<image state="0x00" file="Johnny Cage 01 - rightCenter.png" />
+		<image state="0x01" file="Kano 01 - rightCenter.png" />
+		<image state="0x02" file="Raiden 01 - rightCenter.png" />
+		<image state="0x03" file="Liu Kang 01 - rightCenter.png" />
+		<image state="0x04" file="Scorpion 01 - rightCenter.png" />
+		<image state="0x05" file="Sub Zero 01 - rightCenter.png" />
+		<image state="0x06" file="Sonia 01 - rightCenter.png" />
+		<image state="0x07" file="blank.png" />  <!-- Goro - no image available -->
+		<image state="0x08" file="blank.png" />  <!-- Shang Tsung - no image available -->
+		
+		<image state="0x20" file="blank.png" />
+	</element>
+	<!-- MK 4:3 Bezel View -->
+	<view name="MK Bezel 4:3">
+		<!-- Base bezel -->
+		<element ref="border">
+			<bounds x="20" y="0" width="1880" height="1080"/>
+		</element>
+		<screen index="0">
+			<bounds x="240" y="0" width="1440" height="1080"/>
+		</screen>
+		<!-- Add overlayDay on top of bezel -->
+		<element ref="overlay_day">
+			<bounds x="0" y="0" width="1920" height="1080"/>
+		</element>
+		<!-- Left portrait -->
+		<element id="pt_p1" ref="portrait_left">
+			<bounds x="35" y="5" width="180" height="953"/>
+		</element>
+		<!-- Right portrait -->
+		<element id="pt_p2" ref="portrait_right">
+			<bounds x="1705" y="5" width="180" height="953"/>
+		</element>
+	</view>
+
+	<!-- MK Widescreen Bezel View -->
+	<view name="MK Bezel WS">
+		<element ref="border_ws">
+			<bounds x="0" y="0" width="1920" height="1080"/>
+		</element>
+		<screen index="0">
+			<bounds x="190" y="0" width="1541" height="1080" />
+		</screen>
+		<!-- Add overlayDayWS on top of bezel -->
+		<element ref="overlay_day_ws">
+			<bounds x="0" y="0" width="1920" height="1080"/>
+		</element>
+		<element id="pt_p1" ref="portrait_left">
+			<bounds x="10" y="5" width="160" height="953"/>
+		</element>
+		<element id="pt_p2" ref="portrait_right">
+			<bounds x="1750" y="5" width="160" height="953"/>
+		</element>
+	</view>
+
+	<!-- MK 4:3 Bezel Dark View -->
+	<view name="MK Bezel 4:3 Dark">
+		<!-- Base bezel -->
+		<element ref="border">
+			<bounds x="20" y="0" width="1880" height="1080"/>
+		</element>
+		<screen index="0">
+			<bounds x="240" y="0" width="1440" height="1080"/>
+		</screen>
+		<!-- Add overlayNight on top of bezel -->
+		<element ref="overlay_night">
+			<bounds x="0" y="0" width="1920" height="1080"/>
+		</element>
+		<!-- Left portrait -->
+		<element id="pt_p1" ref="portrait_left">
+			<bounds x="35" y="5" width="180" height="953"/>
+		</element>
+		<!-- Right portrait -->
+		<element id="pt_p2" ref="portrait_right">
+			<bounds x="1705" y="5" width="180" height="953"/>
+		</element>
+	</view>
+
+	<!-- MK Widescreen Bezel Dark View -->
+	<view name="MK Bezel WS Dark">
+		<element ref="border_ws">
+			<bounds x="0" y="0" width="1920" height="1080"/>
+		</element>
+		<screen index="0">
+			<bounds x="190" y="0" width="1541" height="1080" />
+		</screen>
+		<!-- Add overlayNightWS on top of bezel -->
+		<element ref="overlay_night_ws">
+			<bounds x="0" y="0" width="1920" height="1080"/>
+		</element>
+		<element id="pt_p1" ref="portrait_left">
+			<bounds x="10" y="5" width="160" height="953"/>
+		</element>
+		<element id="pt_p2" ref="portrait_right">
+			<bounds x="1750" y="5" width="160" height="953"/>
+		</element>
+	</view>
+
+	<script><![CDATA[
+		file:set_resolve_tags_callback(
+			function()
+				local cpu = file.device:subdevice(":maincpu")
+				local mem = cpu.spaces["program"]
+				
+				-- Function to setup character portraits for a view
+				local function setup_view_portraits(view_name)
+					local view = file.views[view_name]
+					if not view then return end
+					
+					local p1char = view.items["pt_p1"]
+					local p2char = view.items["pt_p2"]
+					if not p1char or not p2char then return end
+					
+					-- MK variant override memory locations (using writable range near energy addresses)
+					local p1_override_active = 0x1051400
+					local p1_override_state = 0x1051401
+					local p2_override_active = 0x1051402
+					local p2_override_state = 0x1051403
+					
+					view:set_prepare_items_callback(
+						function()
+							local p1_state, p2_state
+							
+							-- Check if P1 variant override is active
+							if mem:read_u8(p1_override_active) == 1 then
+								p1_state = mem:read_u8(p1_override_state)
+							else
+								-- MK character detection from cheat file
+								p1_state = mem:read_u8(0x1051290)  -- P1 Select Character address
+								if p1_state > 0x08 then
+									p1_state = 0x20  -- Blank if invalid
+								end
+							end
+							
+							-- Check if P2 variant override is active
+							if mem:read_u8(p2_override_active) == 1 then
+								p2_state = mem:read_u8(p2_override_state)
+							else
+								-- MK P2 character detection
+								p2_state = mem:read_u8(0x1051570)  -- P2 Select Character address
+								if p2_state > 0x08 then
+									p2_state = 0x20  -- Blank if invalid
+								end
+							end
+							
+							p1char:set_state(p1_state)
+							p2char:set_state(p2_state)
+						end
+					)
+				end
+				
+				-- Setup portraits for all views
+				setup_view_portraits("MK Bezel 4:3")
+				setup_view_portraits("MK Bezel WS")
+				setup_view_portraits("MK Bezel 4:3 Dark")
+				setup_view_portraits("MK Bezel WS Dark")
+			end
+		)
+	]]></script>
+</mamelayout>

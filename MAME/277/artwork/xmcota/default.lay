@@ -1,0 +1,218 @@
+<?xml version="1.0"?>
+
+<!-- XMCOTA Layout file with multiple bezel options -->
+
+<mamelayout version="2">
+	
+	<!-- XMCOTA bezels -->
+	<element name="border">
+		<image file="xmcota_bezel_43.png"/>
+	</element>
+	<element name="border_ws">
+		<image file="xmcota_bezel_ws.png"/>
+	</element>
+	
+	<!-- Overlay elements -->
+	<element name="overlay_day">
+  		<image file="..\overlayDay.png"/>
+	</element>
+	<element name="overlay_day_ws">
+  		<image file="..\overlayDayWS.png"/>
+	</element>
+
+	<!-- Overlay elements -->
+	<element name="overlay_night">
+  		<image file="..\overlayNight.png"/>
+	</element>
+	<element name="overlay_night_ws">
+  		<image file="..\overlayNightWS.png"/>
+	</element>
+	
+	<!-- Character portrait elements -->
+	<element name="portrait_left" defstate="0x20">
+		<!-- Base character states from cheat file -->
+		<image state="0x00" file="wolverine_left.png" />
+		<image state="0x02" file="psylocke_left.png" />
+		<image state="0x04" file="colossus_left.png" />
+		<image state="0x06" file="cyclops_left.png" />
+		<image state="0x08" file="storm_left.png" />
+		<image state="0x0A" file="iceman_left.png" />
+		<image state="0x0C" file="spiral_left.png" />
+		<image state="0x0E" file="silver_samurai_left.png" />
+		<image state="0x10" file="omega_red_left.png" />
+		<image state="0x12" file="sentinel_left.png" />
+		<image state="0x14" file="juggernaut_left.png" />    <!-- #Juggernaut -->
+		<image state="0x16" file="magneto_left.png" />       <!-- #Magneto -->
+		<image state="0x18" file="gouki_left.png" />         <!-- #Gouki -->
+		
+		<image state="0x20" file="blank.png" />
+	</element>
+	<element name="portrait_right" defstate="0x20">
+		<!-- Base character states from cheat file -->
+		<image state="0x00" file="wolverine_right.png" />
+		<image state="0x02" file="psylocke_right.png" />
+		<image state="0x04" file="colossus_right.png" />
+		<image state="0x06" file="cyclops_right.png" />
+		<image state="0x08" file="storm_right.png" />
+		<image state="0x0A" file="iceman_right.png" />
+		<image state="0x0C" file="spiral_right.png" />
+		<image state="0x0E" file="silver_samurai_right.png" />
+		<image state="0x10" file="omega_red_right.png" />
+		<image state="0x12" file="sentinel_right.png" />
+		<image state="0x14" file="juggernaut_right.png" />   <!-- #Juggernaut -->
+		<image state="0x16" file="magneto_right.png" />      <!-- #Magneto -->
+		<image state="0x18" file="gouki_right.png" />        <!-- #Gouki -->
+		
+		<image state="0x20" file="blank.png" />
+	</element>
+
+	<!-- XMCOTA Widescreen Bezel View (Default) -->
+	<view name="XMCOTA Bezel WS">
+		<element ref="border_ws">
+			<bounds x="0" y="0" width="1920" height="1080"/>
+		</element>
+		<screen index="0">
+			<bounds x="190" y="0" width="1541" height="1080" />
+		</screen>
+		<!-- Add overlayDayWS on top of bezel -->
+		<element ref="overlay_day_ws">
+			<bounds x="0" y="0" width="1920" height="1080"/>
+		</element>
+		<element id="pt_p1" ref="portrait_left">
+			<bounds x="10" y="5" width="160" height="953"/>
+		</element>
+		<element id="pt_p2" ref="portrait_right">
+			<bounds x="1750" y="5" width="160" height="953"/>
+		</element>
+	</view>
+
+	<!-- XMCOTA 4:3 Bezel View -->
+	<view name="XMCOTA Bezel 4:3">
+		<!-- Base bezel -->
+		<element ref="border">
+			<bounds x="20" y="0" width="1880" height="1080"/>
+		</element>
+		<screen index="0">
+			<bounds x="240" y="0" width="1440" height="1080"/>
+		</screen>
+		<!-- Add overlayDay on top of bezel -->
+		<element ref="overlay_day">
+			<bounds x="0" y="0" width="1920" height="1080"/>
+		</element>
+		<!-- Left portrait -->
+		<element id="pt_p1" ref="portrait_left">
+			<bounds x="35" y="5" width="180" height="953"/>
+		</element>
+		<!-- Right portrait -->
+		<element id="pt_p2" ref="portrait_right">
+			<bounds x="1705" y="5" width="180" height="953"/>
+		</element>
+	</view>
+
+	<!-- XMCOTA Widescreen Bezel Dark View -->
+	<view name="XMCOTA Bezel WS Dark">
+		<element ref="border_ws">
+			<bounds x="0" y="0" width="1920" height="1080"/>
+		</element>
+		<screen index="0">
+			<bounds x="190" y="0" width="1541" height="1080" />
+		</screen>
+		<!-- Add overlayNightWS on top of bezel -->
+		<element ref="overlay_night_ws">
+			<bounds x="0" y="0" width="1920" height="1080"/>
+		</element>
+		<element id="pt_p1" ref="portrait_left">
+			<bounds x="10" y="5" width="160" height="953"/>
+		</element>
+		<element id="pt_p2" ref="portrait_right">
+			<bounds x="1750" y="5" width="160" height="953"/>
+		</element>
+	</view>
+
+	<!-- XMCOTA 4:3 Bezel Dark View -->
+	<view name="XMCOTA Bezel 4:3 Dark">
+		<!-- Base bezel -->
+		<element ref="border">
+			<bounds x="20" y="0" width="1880" height="1080"/>
+		</element>
+		<screen index="0">
+			<bounds x="240" y="0" width="1440" height="1080"/>
+		</screen>
+		<!-- Add overlayNight on top of bezel -->
+		<element ref="overlay_night">
+			<bounds x="0" y="0" width="1920" height="1080"/>
+		</element>
+		<!-- Left portrait -->
+		<element id="pt_p1" ref="portrait_left">
+			<bounds x="35" y="5" width="180" height="953"/>
+		</element>
+		<!-- Right portrait -->
+		<element id="pt_p2" ref="portrait_right">
+			<bounds x="1705" y="5" width="180" height="953"/>
+		</element>
+	</view>
+
+	<script><![CDATA[
+		file:set_resolve_tags_callback(
+			function()
+				local cpu = file.device:subdevice(":maincpu")
+				local mem = cpu.spaces["program"]
+				
+				-- Function to setup character portraits for a view
+				local function setup_view_portraits(view_name)
+					local view = file.views[view_name]
+					if not view then return end
+					
+					local p1char = view.items["pt_p1"]
+					local p2char = view.items["pt_p2"]
+					if not p1char or not p2char then return end
+					
+					-- Variant override memory locations for XMCOTA
+					local p1_override_active = 0xFF9000
+					local p1_override_state = 0xFF9001
+					local p2_override_active = 0xFF9002
+					local p2_override_state = 0xFF9003
+					
+					view:set_prepare_items_callback(
+						function()
+							local p1_state, p2_state
+							
+							-- Check if P1 variant override is active
+							if mem:read_u8(p1_override_active) == 1 then
+								p1_state = mem:read_u8(p1_override_state)
+							else
+								-- XMCOTA character detection from cheat file
+								p1_state = mem:read_u8(0xFF4051) -- P1 character from cheat
+								-- Only blank if character is invalid
+								if p1_state > 0x18 then
+									p1_state = 0x20
+								end
+							end
+							
+							-- Check if P2 variant override is active
+							if mem:read_u8(p2_override_active) == 1 then
+								p2_state = mem:read_u8(p2_override_state)
+							else
+								-- XMCOTA P2 character detection
+								p2_state = mem:read_u8(0xFF4451) -- P2 character from cheat
+								-- Only blank if character is invalid
+								if p2_state > 0x18 then
+									p2_state = 0x20
+								end
+							end
+							
+							p1char:set_state(p1_state)
+							p2char:set_state(p2_state)
+						end
+					)
+				end
+				
+				-- Setup portraits for all views
+				setup_view_portraits("XMCOTA Bezel WS")
+				setup_view_portraits("XMCOTA Bezel 4:3")
+				setup_view_portraits("XMCOTA Bezel WS Dark")
+				setup_view_portraits("XMCOTA Bezel 4:3 Dark")
+			end
+		)
+	]]></script>
+</mamelayout>

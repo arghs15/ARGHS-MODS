@@ -1,0 +1,312 @@
+<?xml version="1.0"?>
+
+<!-- UMK3 Layout file with multiple bezel options -->
+
+<mamelayout version="2">
+	
+	<!-- UMK3 bezels -->
+	<element name="border">
+		<image file="umk3_bezel_43.png"/>
+	</element>
+	<element name="border_ws">
+		<image file="umk3_bezel_ws.png"/>
+	</element>
+	
+	<!-- Overlay elements -->
+	<element name="overlay_day">
+  		<image file="..\overlayDay.png"/>
+	</element>
+	<element name="overlay_day_ws">
+  		<image file="..\overlayDayWS.png"/>
+	</element>
+
+	<!-- Overlay elements -->
+	<element name="overlay_night">
+  		<image file="..\overlayNight.png"/>
+	</element>
+	<element name="overlay_night_ws">
+  		<image file="..\overlayNightWS.png"/>
+	</element>
+	<element name="portrait_left" defstate="0x20">
+		<!-- Base character states from cheat file -->
+		<image state="0x00" file="Kano 01 - leftCenter.png" />
+		<image state="0x01" file="Sonya 01 - leftCenter.png" />
+		<image state="0x02" file="Jax 01 - leftCenter.png" />
+		<image state="0x03" file="Nightwolf 01 - leftCenter.png" />
+		<image state="0x04" file="Sub Zero 01 - leftCenter.png" />
+		<image state="0x05" file="Stryker 01 - leftCenter.png" />
+		<image state="0x06" file="Sindel 01 - leftCenter.png" />
+		<image state="0x07" file="Sektor 01 - leftCenter.png" />
+		<image state="0x08" file="Cyrax 01 - leftCenter.png" />
+		<image state="0x09" file="Kung Lao 01 - leftCenter.png" />
+		<image state="0x0A" file="Kabal 01 - leftCenter.png" />
+		<image state="0x0B" file="Sheeva 01 - leftCenter.png" />
+		<image state="0x0C" file="Shang Tsung 01 - leftCenter.png" />
+		<image state="0x0D" file="Liu Kang 01 - leftCenter.png" />
+		<image state="0x0E" file="Smoke 01 - leftCenter.png" />
+		<image state="0x0F" file="Kitana 01 - leftCenter.png" />
+		<image state="0x10" file="blank.png" />  <!-- Jade - no image available in names.txt -->
+		<image state="0x11" file="Mileena 01 - leftCenter.png" />
+		<image state="0x12" file="blank.png" />  <!-- Scorpion - no image available in names.txt -->
+		<image state="0x13" file="blank.png" />  <!-- Reptile - no image available in names.txt -->
+		<image state="0x14" file="Ermac 01 - leftCenter.png" />
+		<image state="0x15" file="Classic Sub Zero 01 - leftCenter.png" />
+		<image state="0x16" file="Human Smoke 01 - leftCenter.png" />
+		<image state="0x17" file="blank.png" />  <!-- Noob Saibot - no image available in names.txt -->
+		<image state="0x18" file="blank.png" />  <!-- Motaro - no image available in names.txt -->
+		<image state="0x19" file="blank.png" />  <!-- Shao Kahn - no image available in names.txt -->
+		
+		<!-- Variant states for costume changes -->
+		<image state="0x30" file="Kano 02 - leftCenter.png" />
+		<image state="0x31" file="Sonya 02 - leftCenter.png" />
+		<image state="0x32" file="Jax 02 - leftCenter.png" />
+		<image state="0x33" file="Jax 03 - leftCenter.png" />
+		<image state="0x34" file="Nightwolf 02 - leftCenter.png" />
+		<image state="0x35" file="Sub Zero 02 - leftCenter.png" />
+		<image state="0x36" file="Stryker 02 - leftCenter.png" />
+		<image state="0x37" file="Sindel 02 - leftCenter.png" />
+		<image state="0x38" file="Sektor 02 - leftCenter.png" />
+		<image state="0x39" file="Cyrax 02 - leftCenter.png" />
+		<image state="0x3A" file="Kung Lao 02 - leftCenter.png" />
+		<image state="0x3B" file="Kabal 02 - leftCenter.png" />
+		<image state="0x3C" file="Sheeva 02 - leftCenter.png" />
+		<image state="0x3D" file="Shang Tsung 02 - leftCenter.png" />
+		<image state="0x3E" file="Shang Tsung 03 - leftCenter.png" />
+		<image state="0x3F" file="Shang Tsung 04 - leftCenter.png" />
+		<image state="0x40" file="Liu Kang 02 - leftCenter.png" />
+		<image state="0x41" file="Smoke  02 - leftCenter.png" />
+		<image state="0x42" file="Kitana 02 - leftCenter.png" />
+		<image state="0x43" file="Ermac 02 - leftCenter.png" />
+		<image state="0x44" file="Ermac 03 - leftCenter.png" />
+		
+		<image state="0x20" file="blank.png" />
+	</element>
+	<element name="portrait_right" defstate="0x20">
+		<!-- Base character states from cheat file -->
+		<image state="0x00" file="Kano 01 - rightCenter.png" />
+		<image state="0x01" file="Sonya 01 - rightCenter.png" />
+		<image state="0x02" file="Jax 01 - rightCenter.png" />
+		<image state="0x03" file="Nightwolf 01 - rightCenter.png" />
+		<image state="0x04" file="Sub Zero 01 - rightCenter.png" />
+		<image state="0x05" file="Stryker 01 - rightCenter.png" />
+		<image state="0x06" file="Sindel 01 - rightCenter.png" />
+		<image state="0x07" file="Sektor 01 - rightCenter.png" />
+		<image state="0x08" file="Cyrax 01 - rightCenter.png" />
+		<image state="0x09" file="Kung Lao 01 - rightCenter.png" />
+		<image state="0x0A" file="Kabal 01 - rightCenter.png" />
+		<image state="0x0B" file="Sheeva 01 - rightCenter.png" />
+		<image state="0x0C" file="Shang Tsung 01 - rightCenter.png" />
+		<image state="0x0D" file="Liu Kang 01 - rightCenter.png" />
+		<image state="0x0E" file="Smoke 01 - rightCenter.png" />
+		<image state="0x0F" file="Kitana 01 - rightCenter.png" />
+		<image state="0x10" file="blank.png" />  <!-- Jade - no image available in names.txt -->
+		<image state="0x11" file="Mileena 01 - rightCenter.png" />
+		<image state="0x12" file="blank.png" />  <!-- Scorpion - no image available in names.txt -->
+		<image state="0x13" file="blank.png" />  <!-- Reptile - no image available in names.txt -->
+		<image state="0x14" file="Ermac 01 - rightCenter.png" />
+		<image state="0x15" file="Classic Sub Zero 01 - rightCenter.png" />
+		<image state="0x16" file="Human Smoke 01 - rightCenter.png" />
+		<image state="0x17" file="blank.png" />  <!-- Noob Saibot - no image available in names.txt -->
+		<image state="0x18" file="blank.png" />  <!-- Motaro - no image available in names.txt -->
+		<image state="0x19" file="blank.png" />  <!-- Shao Kahn - no image available in names.txt -->
+		
+		<!-- Variant states for costume changes -->
+		<image state="0x30" file="Kano 02 - rightCenter.png" />
+		<image state="0x31" file="Sonya 02 - rightCenter.png" />
+		<image state="0x32" file="Jax 02 - rightCenter.png" />
+		<image state="0x33" file="Jax 03 - rightCenter.png" />
+		<image state="0x34" file="Nightwolf 02 - rightCenter.png" />
+		<image state="0x35" file="Sub Zero 02 - rightCenter.png" />
+		<image state="0x36" file="Stryker 02 - rightCenter.png" />
+		<image state="0x37" file="Sindel 02 - rightCenter.png" />
+		<image state="0x38" file="Sektor 02 - rightCenter.png" />
+		<image state="0x39" file="Cyrax 02 - rightCenter.png" />
+		<image state="0x3A" file="Kung Lao 02 - rightCenter.png" />
+		<image state="0x3B" file="Kabal 02 - rightCenter.png" />
+		<image state="0x3C" file="Sheeva 02 - rightCenter.png" />
+		<image state="0x3D" file="Shang Tsung 02 - rightCenter.png" />
+		<image state="0x3E" file="Shang Tsung 03 - rightCenter.png" />
+		<image state="0x3F" file="Shang Tsung 04 - rightCenter.png" />
+		<image state="0x40" file="Liu Kang 02 - rightCenter.png" />
+		<image state="0x41" file="Smoke  02 - rightCenter.png" />
+		<image state="0x42" file="Kitana 02 - rightCenter.png" />
+		<image state="0x43" file="Ermac 02 - rightCenter.png" />
+		<image state="0x44" file="Ermac 03 - rightCenter.png" />
+		
+		<image state="0x20" file="blank.png" />
+	</element>
+
+	<!-- UMK3 4:3 Bezel View -->
+	<view name="UMK3 Bezel 4:3">
+		<!-- Base bezel -->
+		<element ref="border">
+			<bounds x="20" y="0" width="1880" height="1080"/>
+		</element>
+		<screen index="0">
+			<bounds x="240" y="0" width="1440" height="1080"/>
+		</screen>
+		<!-- Add overlayDay on top of bezel -->
+		<element ref="overlay_day">
+			<bounds x="0" y="0" width="1920" height="1080"/>
+		</element>
+		<!-- Left portrait -->
+		<element id="pt_p1" ref="portrait_left">
+			<bounds x="35" y="5" width="180" height="953"/>
+		</element>
+		<!-- Right portrait -->
+		<element id="pt_p2" ref="portrait_right">
+			<bounds x="1705" y="5" width="180" height="953"/>
+		</element>
+	</view>
+
+	<!-- UMK3 Widescreen Bezel View -->
+	<view name="UMK3 Bezel WS">
+		<element ref="border_ws">
+			<bounds x="0" y="0" width="1920" height="1080"/>
+		</element>
+		<screen index="0">
+			<bounds x="190" y="0" width="1541" height="1080" />
+		</screen>
+		<!-- Add overlayDayWS on top of bezel -->
+		<element ref="overlay_day_ws">
+			<bounds x="0" y="0" width="1920" height="1080"/>
+		</element>
+		<element id="pt_p1" ref="portrait_left">
+			<bounds x="10" y="5" width="160" height="953"/>
+		</element>
+		<element id="pt_p2" ref="portrait_right">
+			<bounds x="1750" y="5" width="160" height="953"/>
+		</element>
+	</view>
+
+	<!-- UMK3 4:3 Bezel Dark View -->
+	<view name="UMK3 Bezel 4:3 Dark">
+		<!-- Base bezel -->
+		<element ref="border">
+			<bounds x="20" y="0" width="1880" height="1080"/>
+		</element>
+		<screen index="0">
+			<bounds x="240" y="0" width="1440" height="1080"/>
+		</screen>
+		<!-- Add overlayNight on top of bezel -->
+		<element ref="overlay_night">
+			<bounds x="0" y="0" width="1920" height="1080"/>
+		</element>
+		<!-- Left portrait -->
+		<element id="pt_p1" ref="portrait_left">
+			<bounds x="35" y="5" width="180" height="953"/>
+		</element>
+		<!-- Right portrait -->
+		<element id="pt_p2" ref="portrait_right">
+			<bounds x="1705" y="5" width="180" height="953"/>
+		</element>
+	</view>
+
+	<!-- UMK3 Widescreen Bezel Dark View -->
+	<view name="UMK3 Bezel WS Dark">
+		<element ref="border_ws">
+			<bounds x="0" y="0" width="1920" height="1080"/>
+		</element>
+		<screen index="0">
+			<bounds x="190" y="0" width="1541" height="1080" />
+		</screen>
+		<!-- Add overlayNightWS on top of bezel -->
+		<element ref="overlay_night_ws">
+			<bounds x="0" y="0" width="1920" height="1080"/>
+		</element>
+		<element id="pt_p1" ref="portrait_left">
+			<bounds x="10" y="5" width="160" height="953"/>
+		</element>
+		<element id="pt_p2" ref="portrait_right">
+			<bounds x="1750" y="5" width="160" height="953"/>
+		</element>
+	</view>
+
+	<script><![CDATA[
+		file:set_resolve_tags_callback(
+			function()
+				local cpu = file.device:subdevice(":maincpu")
+				local mem = cpu.spaces["program"]
+				
+				-- Function to setup character portraits for a view
+				local function setup_view_portraits(view_name)
+					local view = file.views[view_name]
+					if not view then return end
+					
+					local p1char = view.items["pt_p1"]
+					local p2char = view.items["pt_p2"]
+					if not p1char or not p2char then return end
+					
+					-- UMK3 variant override memory locations (with wider spacing)
+					local p1_override_active = 0x1062800
+					local p1_override_state = 0x1062810
+					local p2_override_active = 0x1062820
+					local p2_override_state = 0x1062830
+					
+					view:set_prepare_items_callback(
+						function()
+							local p1_state, p2_state
+							
+							-- Check if P1 variant override is active FIRST
+							local p1_override = mem:read_u8(p1_override_active)
+							if p1_override == 1 then
+								p1_state = mem:read_u8(p1_override_state)
+								-- Validate override state
+								if p1_state == 0xFF or p1_state > 0x44 then
+									p1_state = 0x20
+								end
+							else
+								-- UMK3 character detection from cheat file
+								p1_state = mem:read_u8(0x01060A30)  -- P1 Select Character address
+								-- Check alternative address if primary is invalid
+								if (p1_state == 0xFF or p1_state > 0x19) then
+									local p1_alt = mem:read_u8(0x1060A10)  -- Alternative address
+									if p1_alt <= 0x19 and p1_alt ~= 0xFF then
+										p1_state = p1_alt
+									end
+								end
+								-- Additional validation for P1
+								if p1_state == 0xFF or p1_state > 0x19 then
+									p1_state = 0x20  -- Blank if invalid or uninitialized
+								end
+							end
+							
+							-- Check if P2 variant override is active FIRST
+							local p2_override = mem:read_u8(p2_override_active)
+							if p2_override == 1 then
+								p2_state = mem:read_u8(p2_override_state)
+								-- Validate override state
+								if p2_state == 0xFF or p2_state > 0x44 then
+									p2_state = 0x20
+								end
+							else
+								-- UMK3 P2 character detection
+								p2_state = mem:read_u8(0x010615E0)  -- P2 Select Character address
+								-- Check alternative address if primary is invalid
+								if (p2_state == 0xFF or p2_state > 0x19) then
+									local p2_alt = mem:read_u8(0x10615C0)  -- Alternative address
+									if p2_alt <= 0x19 and p2_alt ~= 0xFF then
+										p2_state = p2_alt
+									end
+								end
+								-- Additional validation for P2
+								if p2_state == 0xFF or p2_state > 0x19 then
+									p2_state = 0x20  -- Blank if invalid or uninitialized
+								end
+							end
+							
+							p1char:set_state(p1_state)
+							p2char:set_state(p2_state)
+						end
+					)
+				end
+				
+				-- Setup portraits for all views
+				setup_view_portraits("UMK3 Bezel 4:3")
+				setup_view_portraits("UMK3 Bezel WS")
+				setup_view_portraits("UMK3 Bezel 4:3 Dark")
+				setup_view_portraits("UMK3 Bezel WS Dark")
+			end
+		)
+	]]></script>
+</mamelayout>
