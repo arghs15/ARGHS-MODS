@@ -11,6 +11,9 @@
 	<element name="border_ws">
 		<image file="xmcota_bezel_ws.png"/>
 	</element>
+	<element name="border_simple">
+		<image file="bezel.png"/>
+	</element>
 	
 	<!-- Overlay elements -->
 	<element name="overlay_day">
@@ -25,7 +28,7 @@
   		<image file="..\overlayNightWS.png"/>
 	</element>
 	
-	<!-- Character portrait elements -->
+	<!-- Character portrait elements for detailed views -->
 	<element name="portrait_left" defstate="0x20">
 		<!-- Base character states -->
 		<image state="0x00" file="Wolverine 01 - leftCenter.png" />
@@ -95,6 +98,80 @@
 		
 		<!-- Variant 3 states for characters that have them -->
 		<image state="0x72" file="Spiral 03 - RightCenter.png" />
+		
+		<image state="0x20" file="blank.png" />
+	</element>
+
+	<!-- Simple portrait elements using basic naming convention -->
+	<element name="portrait_simple_left" defstate="0x20">
+		<!-- Base character states -->
+		<image state="0x00" file="wolverine_left.png" />
+		<image state="0x02" file="psylocke_left.png" />
+		<image state="0x04" file="colossus_left.png" />
+		<image state="0x06" file="cyclops_left.png" />
+		<image state="0x08" file="storm_left.png" />
+		<image state="0x0A" file="iceman_left.png" />
+		<image state="0x0C" file="spiral_left.png" />
+		<image state="0x0E" file="silver_samurai_left.png" />
+		<image state="0x10" file="omega_red_left.png" />
+		<image state="0x12" file="sentinel_left.png" />
+		<image state="0x14" file="juggernaut_left.png" />
+		<image state="0x16" file="magneto_left.png" />
+		<image state="0x18" file="gouki_left.png" />
+		
+		<!-- Variant 2 states using simple naming -->
+		<image state="0x30" file="wolverine_02_left.png" />
+		<image state="0x34" file="psylocke_02_left.png" />
+		<image state="0x38" file="colossus_02_left.png" />
+		<image state="0x3C" file="cyclops_02_left.png" />
+		<image state="0x40" file="storm_02_left.png" />
+		<image state="0x44" file="iceman_02_left.png" />
+		<image state="0x48" file="spiral_02_left.png" />
+		<image state="0x4C" file="silver_samurai_02_left.png" />
+		<image state="0x50" file="omega_red_02_left.png" />
+		<image state="0x54" file="sentinel_02_left.png" />
+		<image state="0x58" file="juggernaut_02_left.png" />
+		<image state="0x5C" file="magneto_02_left.png" />
+		<image state="0x60" file="gouki_02_left.png" />
+		
+		<!-- Variant 3 states -->
+		<image state="0x70" file="spiral_03_left.png" />
+		
+		<image state="0x20" file="blank.png" />
+	</element>
+	<element name="portrait_simple_right" defstate="0x20">
+		<!-- Base character states -->
+		<image state="0x00" file="wolverine_right.png" />
+		<image state="0x02" file="psylocke_right.png" />
+		<image state="0x04" file="colossus_right.png" />
+		<image state="0x06" file="cyclops_right.png" />
+		<image state="0x08" file="storm_right.png" />
+		<image state="0x0A" file="iceman_right.png" />
+		<image state="0x0C" file="spiral_right.png" />
+		<image state="0x0E" file="silver_samurai_right.png" />
+		<image state="0x10" file="omega_red_right.png" />
+		<image state="0x12" file="sentinel_right.png" />
+		<image state="0x14" file="juggernaut_right.png" />
+		<image state="0x16" file="magneto_right.png" />
+		<image state="0x18" file="gouki_right.png" />
+		
+		<!-- Variant 2 states using simple naming -->
+		<image state="0x32" file="wolverine_02_right.png" />
+		<image state="0x36" file="psylocke_02_right.png" />
+		<image state="0x3A" file="colossus_02_right.png" />
+		<image state="0x3E" file="cyclops_02_right.png" />
+		<image state="0x42" file="storm_02_right.png" />
+		<image state="0x46" file="iceman_02_right.png" />
+		<image state="0x4A" file="spiral_02_right.png" />
+		<image state="0x4E" file="silver_samurai_02_right.png" />
+		<image state="0x52" file="omega_red_02_right.png" />
+		<image state="0x56" file="sentinel_02_right.png" />
+		<image state="0x5A" file="juggernaut_02_right.png" />
+		<image state="0x5E" file="magneto_02_right.png" />
+		<image state="0x62" file="gouki_02_right.png" />
+		
+		<!-- Variant 3 states -->
+		<image state="0x72" file="spiral_03_right.png" />
 		
 		<image state="0x20" file="blank.png" />
 	</element>
@@ -181,6 +258,22 @@
 		</element>
 	</view>
 
+	<!-- Simple Bezel View (using simple naming convention) -->
+	<view name="XMCOTA Simple Bezel">
+		<screen index="0">
+			<bounds x="360" y="98" width="1204" height="884"/>
+		</screen>
+		<element ref="border_simple">
+			<bounds x="0" y="0" width="1920" height="1080"/>
+		</element>
+		<element id="pt_p1" ref="portrait_simple_left">
+			<bounds x="0" y="0" width="585" height="1080"/>
+		</element>
+		<element id="pt_p2" ref="portrait_simple_right">
+			<bounds x="1335" y="0" width="585" height="1080"/>
+		</element>
+	</view>
+
 	<script><![CDATA[
 		file:set_resolve_tags_callback(
 			function()
@@ -241,6 +334,7 @@
 				setup_view_portraits("XMCOTA Bezel 4:3")
 				setup_view_portraits("XMCOTA Bezel WS Dark")
 				setup_view_portraits("XMCOTA Bezel 4:3 Dark")
+				setup_view_portraits("XMCOTA Simple Bezel")
 			end
 		)
 	]]></script>
