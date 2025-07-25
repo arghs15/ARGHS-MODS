@@ -274,6 +274,16 @@
 		</element>
 	</view>
 
+	<!-- Widescreen Bezel Only (no character portraits) - LAST -->
+	<view name="XMCOTA Bezel WS Only">
+		<element ref="border_ws">
+			<bounds x="0" y="0" width="1920" height="1080"/>
+		</element>
+		<screen index="0">
+			<bounds x="192" y="0" width="1536" height="1080" />
+		</screen>
+	</view>
+
 	<script><![CDATA[
 		file:set_resolve_tags_callback(
 			function()
