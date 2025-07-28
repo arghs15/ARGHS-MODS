@@ -28,7 +28,7 @@
   		<image file="..\overlayNightWS.png"/>
 	</element>
 	
-	<element name="portrait_left" defstate="0x20">
+	<element name="portrait_left" defstate="0x30">
 		<!-- SFEX2 Plus Character states -->
 		<image state="0x01" file="Doctrine Dark 01 - leftCenter.png" />
 		<image state="0x02" file="Hokuto 01 - leftCenter.png" />
@@ -80,7 +80,7 @@
 		<image state="0x2E" file="Kairi 02 - leftCenter.png" />
 		<image state="0x30" file="blank.png" />
 	</element>
-	<element name="portrait_right" defstate="0x20">
+	<element name="portrait_right" defstate="0x30">
 		<!-- SFEX2 Plus Character states -->
 		<image state="0x01" file="Doctrine Dark 01 - rightCenter.png" />
 		<image state="0x02" file="Hokuto 01 - rightCenter.png" />
@@ -234,10 +234,10 @@
 				-- Variant state tracking
 				local p1_using_variant = false
 				local p2_using_variant = false
-				local p1_last_char = 0x20
-				local p2_last_char = 0x20
-				local p1_stable_char = 0x20
-				local p2_stable_char = 0x20
+				local p1_last_char = 0x30        -- MUST be 0x30, not 0x20
+				local p2_last_char = 0x30        -- MUST be 0x30, not 0x20
+				local p1_stable_char = 0x30      -- MUST be 0x30, not 0x20
+				local p2_stable_char = 0x30      -- MUST be 0x30, not 0x20
 				
 				-- Character variant mapping - All characters have 2 portraits
 				local variants = {
@@ -281,96 +281,103 @@
 					
 					view:set_prepare_items_callback(
 						function()
-							-- FIX 1: Correct P2 address (0x1F011, not 0x1F014)
+							-- Read character data
 							local p1_current = mem:read_u8(0x1F010)
-							local p2_current = mem:read_u8(0x1F011)  -- FIXED: was 0x1F014
+							local p2_current = mem:read_u8(0x1F011)
 							
-							-- Update stable characters when we get valid new data
+							-- ADD DEBUG HERE - right after reading the data
+							if p1_stable_char == 0x30 and p2_stable_char == 0x30 then
+								print(string.format("SFEX2P DEBUG: Initial state - P1_stable: 0x%02X, P2_stable: 0x%02X, P1_current: 0x%02X, P2_current: 0x%02X", 
+									p1_stable_char, p2_stable_char, p1_current, p2_current))
+							end
+							
+							-- PURE ORIGINAL LOGIC: Only update on valid data, ignore invalid data
 							if p1_current >= 0x01 and p1_current <= 0x17 then
 								if p1_current ~= p1_stable_char then
-									-- Character changed, reset variant and update
 									p1_using_variant = false
 									print(string.format("SFEX2P: P1 character changed from 0x%02X to 0x%02X", p1_stable_char, p1_current))
 								end
 								p1_stable_char = p1_current
 							end
+							
 							if p2_current >= 0x01 and p2_current <= 0x17 then
 								if p2_current ~= p2_stable_char then
-									-- Character changed, reset variant and update
 									p2_using_variant = false
 									print(string.format("SFEX2P: P2 character changed from 0x%02X to 0x%02X", p2_stable_char, p2_current))
 								end
 								p2_stable_char = p2_current
 							end
 							
+							-- Check for manual reset requests (new communication flags)
+							local reset_p1 = mem:read_u8(0x2E0003)  -- New flag for P1 reset
+							local reset_p2 = mem:read_u8(0x2E0004)  -- New flag for P2 reset
+							local reset_both = mem:read_u8(0x2E0005) -- New flag for both reset
+							
+							if reset_p1 > 0 then
+								mem:write_u8(0x2E0003, 0)
+								p1_stable_char = 0x30
+								p1_using_variant = false
+								print("SFEX2P: P1 manually reset to blank")
+							end
+							
+							if reset_p2 > 0 then
+								mem:write_u8(0x2E0004, 0)
+								p2_stable_char = 0x30
+								p2_using_variant = false
+								print("SFEX2P: P2 manually reset to blank")
+							end
+							
+							if reset_both > 0 then
+								mem:write_u8(0x2E0005, 0)
+								p1_stable_char = 0x30
+								p2_stable_char = 0x30
+								p1_using_variant = false
+								p2_using_variant = false
+								print("SFEX2P: Both players manually reset to blank")
+							end
+							
 							-- Use stable characters for display
 							local p1_display_char = p1_stable_char
 							local p2_display_char = p2_stable_char
 							
-							-- FIX 2: Handle same character selection
-							-- If both players have the same character, force P2 to use variant
-							if p1_display_char == p2_display_char and p1_display_char ~= 0x20 then
-								p2_using_variant = true
-								print(string.format("SFEX2P: Both players selected 0x%02X, forcing P2 to variant", p1_display_char))
-							end
-							
-							-- Update tracking for change detection
+							-- Update tracking
 							p1_last_char = p1_display_char
 							p2_last_char = p2_display_char
 							
-							-- Check for cycle requests from plugin
+							-- Handle cycle requests (same as before)
 							local p1_cycle = mem:read_u8(cycle_flag_p1)
 							local p2_cycle = mem:read_u8(cycle_flag_p2)
 							local both_cycle = mem:read_u8(cycle_flag_both)
 							
-							-- Handle P1 cycle request
 							if p1_cycle > 0 then
-								mem:write_u8(cycle_flag_p1, 0)  -- Clear flag
+								mem:write_u8(cycle_flag_p1, 0)
 								if variants[p1_display_char] then
 									p1_using_variant = not p1_using_variant
 									local display_char = p1_using_variant and variants[p1_display_char] or p1_display_char
 									print(string.format("SFEX2P: P1 variant %s (0x%02X)", 
 										p1_using_variant and "ON" or "OFF", display_char))
-								else
-									print(string.format("SFEX2P: P1 character 0x%02X has no variant", p1_display_char))
 								end
 							end
 							
-							-- Handle P2 cycle request
 							if p2_cycle > 0 then
-								mem:write_u8(cycle_flag_p2, 0)  -- Clear flag
+								mem:write_u8(cycle_flag_p2, 0)
 								if variants[p2_display_char] then
 									p2_using_variant = not p2_using_variant
 									local display_char = p2_using_variant and variants[p2_display_char] or p2_display_char
 									print(string.format("SFEX2P: P2 variant %s (0x%02X)", 
 										p2_using_variant and "ON" or "OFF", display_char))
-								else
-									print(string.format("SFEX2P: P2 character 0x%02X has no variant", p2_display_char))
 								end
 							end
 							
-							-- Handle both cycle request
 							if both_cycle > 0 then
-								mem:write_u8(cycle_flag_both, 0)  -- Clear flag
+								mem:write_u8(cycle_flag_both, 0)
 								print("SFEX2P: Both players variant toggle")
 								
-								-- Toggle P1
 								if variants[p1_display_char] then
 									p1_using_variant = not p1_using_variant
-									local display_char = p1_using_variant and variants[p1_display_char] or p1_display_char
-									print(string.format("SFEX2P: P1 variant %s (0x%02X)", 
-										p1_using_variant and "ON" or "OFF", display_char))
 								end
-								
-								-- Toggle P2 (but respect same-character forcing)
 								if variants[p2_display_char] then
-									-- Only toggle if not forced by same character selection
-									if p1_display_char ~= p2_display_char then
-										p2_using_variant = not p2_using_variant
-									end
-									local display_char = p2_using_variant and variants[p2_display_char] or p2_display_char
-									print(string.format("SFEX2P: P2 variant %s (0x%02X)", 
-										p2_using_variant and "ON" or "OFF", display_char))
+									p2_using_variant = not p2_using_variant
 								end
 							end
 							

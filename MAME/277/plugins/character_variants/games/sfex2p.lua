@@ -5,6 +5,54 @@ local sfex2p = {}
 local cycle_flag_p1 = 0x2E0000
 local cycle_flag_p2 = 0x2E0001
 local cycle_flag_both = 0x2E0002
+-- New reset flags
+local reset_flag_p1 = 0x2E0003
+local reset_flag_p2 = 0x2E0004
+local reset_flag_both = 0x2E0005
+
+-- Add these new functions to your module:
+
+function sfex2p.reset_p1_portrait()
+    local mem = get_memory()
+    if not mem then return end
+    
+    print("SFEX2P Plugin: P1 portrait reset requested")
+    send_cycle_request(reset_flag_p1, "P1 Reset")
+end
+
+function sfex2p.reset_p2_portrait()
+    local mem = get_memory()
+    if not mem then return end
+    
+    print("SFEX2P Plugin: P2 portrait reset requested")
+    send_cycle_request(reset_flag_p2, "P2 Reset")
+end
+
+function sfex2p.reset_both_portraits()
+    local mem = get_memory()
+    if not mem then return end
+    
+    print("SFEX2P Plugin: Both portraits reset requested")
+    send_cycle_request(reset_flag_both, "Both Reset")
+end
+
+-- Update the cleanup function to clear all flags:
+function sfex2p.cleanup()
+    print("SFEX2P module cleanup")
+    
+    local mem = get_memory()
+    if mem then
+        pcall(function()
+            mem:write_u8(cycle_flag_p1, 0)
+            mem:write_u8(cycle_flag_p2, 0)
+            mem:write_u8(cycle_flag_both, 0)
+            mem:write_u8(reset_flag_p1, 0)
+            mem:write_u8(reset_flag_p2, 0)
+            mem:write_u8(reset_flag_both, 0)
+            print("SFEX2P: All communication flags cleared on cleanup")
+        end)
+    end
+end
 
 -- Memory addresses for SFEX2 Plus - Multiple options to try
 local char_addresses = {
@@ -45,8 +93,9 @@ end
 
 -- Find current character data using the discovered addresses
 local function get_character_data(mem)
+    -- FIX: Use correct P2 address (0x1F011, not 0x1F014)
     local p1_char = mem:read_u8(0x1F010)
-    local p2_char = mem:read_u8(0x1F014)
+    local p2_char = mem:read_u8(0x1F011)  -- FIXED: was 0x1F014
     
     -- Validate characters
     if p1_char < 0x01 or p1_char > 0x17 then
