@@ -1,0 +1,376 @@
+<?xml version="1.0"?>
+
+<!-- SFEX Plus Layout file - Correct Character Variants -->
+
+<mamelayout version="2">
+	
+	<!-- SFEX bezels -->
+	<element name="border">
+		<image file="sfexp_bezel_43.png"/>
+	</element>
+	<element name="border_ws">
+		<image file="sfexp_bezel_ws.png"/>
+	</element>
+	
+	<!-- Overlay elements -->
+	<element name="overlay_day">
+  		<image file="..\overlayDay.png"/>
+	</element>
+	<element name="overlay_day_ws">
+  		<image file="..\overlayDayWS.png"/>
+	</element>
+
+	<!-- Overlay elements -->
+	<element name="overlay_night">
+  		<image file="..\overlayNight.png"/>
+	</element>
+	<element name="overlay_night_ws">
+  		<image file="..\overlayNightWS.png"/>
+	</element>
+	
+	<element name="portrait_left" defstate="0x20">
+		<!-- SFEX Plus Character states based on sfexp.xml -->
+		<image state="0x00" file="Kairi 01 - leftCenter.png" />
+		<image state="0x01" file="Hokuto 01 - leftCenter.png" />
+		<image state="0x02" file="Darun 01 - leftCenter.png" />
+		<image state="0x03" file="D Dark 01 - leftCenter.png" />
+		<image state="0x04" file="Pullum 01 - leftCenter.png" />
+		<image state="0x05" file="Blair 01 - leftCenter.png" />
+		<image state="0x06" file="Skullomania 01 - leftCenter.png" />
+		<image state="0x07" file="Allen 01 - leftCenter.png" />
+		<image state="0x08" file="C Jack 01 - leftCenter.png" />
+		<image state="0x09" file="Guile 01 - leftCenter.png" />
+		<image state="0x0A" file="M Bison 02 - leftCenter.png" />
+		<image state="0x0B" file="Garuda 02 - leftCenter.png" />
+		<image state="0x0C" file="Ryu 01 - leftCenter.png" />
+		<image state="0x0D" file="Ken 01 - leftCenter.png" />
+		<image state="0x0E" file="Chun Li 01 - leftCenter.png" />
+		<image state="0x0F" file="Zangief 01 - leftCenter.png" />
+		<image state="0x10" file="Akuma 01 - leftCenter.png" />
+		<image state="0x11" file="Akuma 02 - leftCenter.png" />
+		<image state="0x12" file="Ryu 02 - leftCenter.png" />
+		<image state="0x13" file="Hokuto 02 - leftCenter.png" />
+		<image state="0x14" file="M Bison 01 - leftCenter.png" />
+		<image state="0x15" file="Garuda 01 - leftCenter.png" />
+		<image state="0x16" file="Cycloid Gamma 01 - leftCenter.png" />
+		<image state="0x17" file="Cycloid Beta 01 - leftCenter.png" />
+		
+		<!-- Second variants for all characters -->
+		<image state="0x18" file="Kairi 02 - leftCenter.png" />
+		<image state="0x19" file="Hokuto 02 - leftCenter.png" />
+		<image state="0x1A" file="Darun 02 - leftCenter.png" />
+		<image state="0x1B" file="D Dark 02 - leftCenter.png" />
+		<image state="0x1C" file="Pullum 02 - leftCenter.png" />
+		<image state="0x1D" file="Blair 02 - leftCenter.png" />
+		<image state="0x1E" file="Skullomania 02 - leftCenter.png" />
+		<image state="0x1F" file="Allen 02 - leftCenter.png" />
+		<image state="0x20" file="C Jack 02 - leftCenter.png" />
+		<image state="0x21" file="Guile 02 - leftCenter.png" />
+		<image state="0x22" file="M Bison Alt 02 - leftCenter.png" />
+		<image state="0x23" file="Garuda Alt 02 - leftCenter.png" />
+		<image state="0x24" file="Ryu 02 - leftCenter.png" />
+		<image state="0x25" file="Ken 02 - leftCenter.png" />
+		<image state="0x26" file="Chun Li 02 - leftCenter.png" />
+		<image state="0x27" file="Zangief 02 - leftCenter.png" />
+		<image state="0x28" file="Akuma 02 - leftCenter.png" />
+		<image state="0x29" file="Akuma Alt 02 - leftCenter.png" />
+		<image state="0x2A" file="Ryu Alt 02 - leftCenter.png" />
+		<image state="0x2B" file="Hokuto Alt 02 - leftCenter.png" />
+		<image state="0x2C" file="M Bison 02 - leftCenter.png" />
+		<image state="0x2D" file="Garuda 02 - leftCenter.png" />
+		<image state="0x2E" file="Cycloid Gamma 02 - leftCenter.png" />
+		<image state="0x2F" file="Cycloid Beta 02 - leftCenter.png" />
+		<image state="0x30" file="blank.png" />
+	</element>
+	<element name="portrait_right" defstate="0x20">
+		<!-- SFEX Plus Character states based on sfexp.xml -->
+		<image state="0x00" file="Kairi 01 - rightCenter.png" />
+		<image state="0x01" file="Hokuto 01 - rightCenter.png" />
+		<image state="0x02" file="Darun 01 - rightCenter.png" />
+		<image state="0x03" file="D Dark 01 - rightCenter.png" />
+		<image state="0x04" file="Pullum 01 - rightCenter.png" />
+		<image state="0x05" file="Blair 01 - rightCenter.png" />
+		<image state="0x06" file="Skullomania 01 - rightCenter.png" />
+		<image state="0x07" file="Allen 01 - rightCenter.png" />
+		<image state="0x08" file="C Jack 01 - rightCenter.png" />
+		<image state="0x09" file="Guile 01 - rightCenter.png" />
+		<image state="0x0A" file="M Bison 02 - rightCenter.png" />
+		<image state="0x0B" file="Garuda 02 - rightCenter.png" />
+		<image state="0x0C" file="Ryu 01 - rightCenter.png" />
+		<image state="0x0D" file="Ken 01 - rightCenter.png" />
+		<image state="0x0E" file="Chun Li 01 - rightCenter.png" />
+		<image state="0x0F" file="Zangief 01 - rightCenter.png" />
+		<image state="0x10" file="Akuma 01 - rightCenter.png" />
+		<image state="0x11" file="Akuma 02 - rightCenter.png" />
+		<image state="0x12" file="Ryu 02 - rightCenter.png" />
+		<image state="0x13" file="Hokuto 02 - rightCenter.png" />
+		<image state="0x14" file="M Bison 01 - rightCenter.png" />
+		<image state="0x15" file="Garuda 01 - rightCenter.png" />
+		<image state="0x16" file="Cycloid Gamma 01 - rightCenter.png" />
+		<image state="0x17" file="Cycloid Beta 01 - rightCenter.png" />
+		
+		<!-- Second variants for all characters -->
+		<image state="0x18" file="Kairi 02 - rightCenter.png" />
+		<image state="0x19" file="Hokuto 02 - rightCenter.png" />
+		<image state="0x1A" file="Darun 02 - rightCenter.png" />
+		<image state="0x1B" file="D Dark 02 - rightCenter.png" />
+		<image state="0x1C" file="Pullum 02 - rightCenter.png" />
+		<image state="0x1D" file="Blair 02 - rightCenter.png" />
+		<image state="0x1E" file="Skullomania 02 - rightCenter.png" />
+		<image state="0x1F" file="Allen 02 - rightCenter.png" />
+		<image state="0x20" file="C Jack 02 - rightCenter.png" />
+		<image state="0x21" file="Guile 02 - rightCenter.png" />
+		<image state="0x22" file="M Bison Alt 02 - rightCenter.png" />
+		<image state="0x23" file="Garuda Alt 02 - rightCenter.png" />
+		<image state="0x24" file="Ryu 02 - rightCenter.png" />
+		<image state="0x25" file="Ken 02 - rightCenter.png" />
+		<image state="0x26" file="Chun Li 02 - rightCenter.png" />
+		<image state="0x27" file="Zangief 02 - rightCenter.png" />
+		<image state="0x28" file="Akuma 02 - rightCenter.png" />
+		<image state="0x29" file="Akuma Alt 02 - rightCenter.png" />
+		<image state="0x2A" file="Ryu Alt 02 - rightCenter.png" />
+		<image state="0x2B" file="Hokuto Alt 02 - rightCenter.png" />
+		<image state="0x2C" file="M Bison 02 - rightCenter.png" />
+		<image state="0x2D" file="Garuda 02 - rightCenter.png" />
+		<image state="0x2E" file="Cycloid Gamma 02 - rightCenter.png" />
+		<image state="0x2F" file="Cycloid Beta 02 - rightCenter.png" />
+		
+		<image state="0x30" file="blank.png" />
+	</element>
+
+	<!-- SFEX 4:3 Bezel View -->
+	<view name="SFEX Bezel 4:3">
+		<!-- Base bezel -->
+		<element ref="border">
+			<bounds x="20" y="0" width="1880" height="1080"/>
+		</element>
+		<screen index="0">
+			<bounds x="240" y="0" width="1440" height="1080"/>
+		</screen>
+		<!-- Add overlayDay on top of bezel -->
+		<element ref="overlay_day">
+			<bounds x="0" y="0" width="1920" height="1080"/>
+		</element>
+		<!-- Left portrait -->
+		<element id="pt_p1" ref="portrait_left">
+			<bounds x="35" y="5" width="180" height="953"/>
+		</element>
+		<!-- Right portrait -->
+		<element id="pt_p2" ref="portrait_right">
+			<bounds x="1705" y="5" width="180" height="953"/>
+		</element>
+	</view>
+
+	<!-- SFEX Widescreen Bezel View -->
+	<view name="SFEX Bezel WS">
+		<element ref="border_ws">
+			<bounds x="0" y="0" width="1920" height="1080"/>
+		</element>
+		<screen index="0">
+			<bounds x="190" y="0" width="1541" height="1080" />
+		</screen>
+		<!-- Add overlayDayWS on top of bezel -->
+		<element ref="overlay_day_ws">
+			<bounds x="0" y="0" width="1920" height="1080"/>
+		</element>
+		<element id="pt_p1" ref="portrait_left">
+			<bounds x="10" y="5" width="160" height="953"/>
+		</element>
+		<element id="pt_p2" ref="portrait_right">
+			<bounds x="1750" y="5" width="160" height="953"/>
+		</element>
+	</view>
+
+	<!-- SFEX 4:3 Bezel Dark View -->
+	<view name="SFEX Bezel 4:3 Dark">
+		<!-- Base bezel -->
+		<element ref="border">
+			<bounds x="20" y="0" width="1880" height="1080"/>
+		</element>
+		<screen index="0">
+			<bounds x="240" y="0" width="1440" height="1080"/>
+		</screen>
+		<!-- Add overlayNight on top of bezel -->
+		<element ref="overlay_night">
+			<bounds x="0" y="0" width="1920" height="1080"/>
+		</element>
+		<!-- Left portrait -->
+		<element id="pt_p1" ref="portrait_left">
+			<bounds x="35" y="5" width="180" height="953"/>
+		</element>
+		<!-- Right portrait -->
+		<element id="pt_p2" ref="portrait_right">
+			<bounds x="1705" y="5" width="180" height="953"/>
+		</element>
+	</view>
+
+	<!-- SFEX Widescreen Bezel Dark View -->
+	<view name="SFEX Bezel WS Dark">
+		<element ref="border_ws">
+			<bounds x="0" y="0" width="1920" height="1080"/>
+		</element>
+		<screen index="0">
+			<bounds x="190" y="0" width="1541" height="1080" />
+		</screen>
+		<!-- Add overlayNightWS on top of bezel -->
+		<element ref="overlay_night_ws">
+			<bounds x="0" y="0" width="1920" height="1080"/>
+		</element>
+		<element id="pt_p1" ref="portrait_left">
+			<bounds x="10" y="5" width="160" height="953"/>
+		</element>
+		<element id="pt_p2" ref="portrait_right">
+			<bounds x="1750" y="5" width="160" height="953"/>
+		</element>
+	</view>
+
+	<script><![CDATA[
+		file:set_resolve_tags_callback(
+			function()
+				local cpu = file.device:subdevice(":maincpu")
+				local mem = cpu.spaces["program"]
+				
+				-- Communication flags for SFEX Plus
+				local cycle_flag_p1 = 0x2E0000
+				local cycle_flag_p2 = 0x2E0001
+				local cycle_flag_both = 0x2E0002
+				
+				-- Variant state tracking
+				local p1_using_variant = false
+				local p2_using_variant = false
+				local p1_last_char = 0x20
+				local p2_last_char = 0x20
+				
+				-- SFEX Plus Character variant mapping - All characters have 2 portraits
+				local variants = {
+					-- All characters with second portrait variants
+					[0x00] = 0x18,  -- Kairi 01 -> Kairi 02
+					[0x01] = 0x19,  -- Hokuto 01 -> Hokuto 02
+					[0x02] = 0x1A,  -- Darun 01 -> Darun 02
+					[0x03] = 0x1B,  -- D.Dark 01 -> D.Dark 02
+					[0x04] = 0x1C,  -- Pullum 01 -> Pullum 02
+					[0x05] = 0x1D,  -- Blair 01 -> Blair 02
+					[0x06] = 0x1E,  -- Skullomania 01 -> Skullomania 02
+					[0x07] = 0x1F,  -- Allen 01 -> Allen 02
+					[0x08] = 0x20,  -- C.Jack 01 -> C.Jack 02
+					[0x09] = 0x21,  -- Guile 01 -> Guile 02
+					[0x0A] = 0x22,  -- M.Bison (Alt) 01 -> M.Bison (Alt) 02
+					[0x0B] = 0x23,  -- Garuda (Alt) 01 -> Garuda (Alt) 02
+					[0x0C] = 0x24,  -- Ryu 01 -> Ryu 02
+					[0x0D] = 0x25,  -- Ken 01 -> Ken 02
+					[0x0E] = 0x26,  -- Chun-Li 01 -> Chun-Li 02
+					[0x0F] = 0x27,  -- Zangief 01 -> Zangief 02
+					[0x10] = 0x28,  -- Akuma 01 -> Akuma 02
+					[0x11] = 0x29,  -- Akuma (Alt) 01 -> Akuma (Alt) 02
+					[0x12] = 0x2A,  -- Ryu (Alt) 01 -> Ryu (Alt) 02
+					[0x13] = 0x2B,  -- Hokuto (Alt) 01 -> Hokuto (Alt) 02
+					[0x14] = 0x2C,  -- M.Bison 01 -> M.Bison 02
+					[0x15] = 0x2D,  -- Garuda 01 -> Garuda 02
+					[0x16] = 0x2E,  -- Cycloid-Gamma 01 -> Cycloid-Gamma 02
+					[0x17] = 0x2F   -- Cycloid-Beta 01 -> Cycloid-Beta 02
+				}
+				
+				-- Initialize communication area
+				mem:write_u8(cycle_flag_p1, 0)
+				mem:write_u8(cycle_flag_p2, 0)
+				mem:write_u8(cycle_flag_both, 0)
+				
+				local function setup_view_portraits(view_name)
+					local view = file.views[view_name]
+					if not view then return end
+					
+					local p1char = view.items["pt_p1"]
+					local p2char = view.items["pt_p2"]
+					if not p1char or not p2char then return end
+					
+					view:set_prepare_items_callback(
+						function()
+							-- Read current character selections (SFEX Plus addresses)
+							local p1_current = mem:read_u8(0x32358A)
+							local p2_current = mem:read_u8(0x3249FE)
+							
+							-- Check for character changes and reset variants
+							if p1_current ~= p1_last_char and p1_current ~= 0x20 then
+								p1_using_variant = false
+								p1_last_char = p1_current
+								print(string.format("SFEXP: P1 character changed to 0x%02X", p1_current))
+							end
+							
+							if p2_current ~= p2_last_char and p2_current ~= 0x20 then
+								p2_using_variant = false
+								p2_last_char = p2_current
+								print(string.format("SFEXP: P2 character changed to 0x%02X", p2_current))
+							end
+							
+							-- Check for cycle requests from plugin
+							local p1_cycle = mem:read_u8(cycle_flag_p1)
+							local p2_cycle = mem:read_u8(cycle_flag_p2)
+							local both_cycle = mem:read_u8(cycle_flag_both)
+							
+							-- Handle P1 cycle request
+							if p1_cycle > 0 then
+								mem:write_u8(cycle_flag_p1, 0)  -- Clear flag
+								if variants[p1_current] then
+									p1_using_variant = not p1_using_variant
+									local display_char = p1_using_variant and variants[p1_current] or p1_current
+									print(string.format("SFEXP: P1 variant %s (0x%02X)", 
+										  p1_using_variant and "ON" or "OFF", display_char))
+								else
+									print(string.format("SFEXP: P1 character 0x%02X has no variant", p1_current))
+								end
+							end
+							
+							-- Handle P2 cycle request
+							if p2_cycle > 0 then
+								mem:write_u8(cycle_flag_p2, 0)  -- Clear flag
+								if variants[p2_current] then
+									p2_using_variant = not p2_using_variant
+									local display_char = p2_using_variant and variants[p2_current] or p2_current
+									print(string.format("SFEXP: P2 variant %s (0x%02X)", 
+										  p2_using_variant and "ON" or "OFF", display_char))
+								else
+									print(string.format("SFEXP: P2 character 0x%02X has no variant", p2_current))
+								end
+							end
+							
+							-- Handle both cycle request
+							if both_cycle > 0 then
+								mem:write_u8(cycle_flag_both, 0)  -- Clear flag
+								print("SFEXP: Both players variant toggle")
+								
+								-- Toggle P1
+								if variants[p1_current] then
+									p1_using_variant = not p1_using_variant
+									local display_char = p1_using_variant and variants[p1_current] or p1_current
+									print(string.format("SFEXP: P1 variant %s (0x%02X)", 
+										  p1_using_variant and "ON" or "OFF", display_char))
+								end
+								
+								-- Toggle P2
+								if variants[p2_current] then
+									p2_using_variant = not p2_using_variant
+									local display_char = p2_using_variant and variants[p2_current] or p2_current
+									print(string.format("SFEXP: P2 variant %s (0x%02X)", 
+										  p2_using_variant and "ON" or "OFF", display_char))
+								end
+							end
+							
+							-- Determine display states
+							local p1_display = p1_using_variant and variants[p1_current] or p1_current
+							local p2_display = p2_using_variant and variants[p2_current] or p2_current
+							
+							-- Set portrait states
+							p1char:set_state(p1_display)
+							p2char:set_state(p2_display)
+						end
+					)
+				end
+				
+				setup_view_portraits("SFEX Bezel 4:3")
+				setup_view_portraits("SFEX Bezel WS")
+				setup_view_portraits("SFEX Bezel 4:3 Dark")
+				setup_view_portraits("SFEX Bezel WS Dark")
+			end
+		)
+	]]></script>
+</mamelayout>
