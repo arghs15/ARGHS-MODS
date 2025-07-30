@@ -1,0 +1,42 @@
+<!-- Bezel.lay -->
+
+<mamelayout version="2">
+ <element name="Background">
+    <image file="..\DefaultBezelH.png"/>
+  </element>
+ <element name="Bezel">
+    <image file="Bezel.png"/>
+  </element>
+ <element name="Background2">
+    <image file="..\DefaultBezelH.png"/>
+  </element>
+ <element name="Bezel2">
+    <image file="Bezel2.png"/>
+  </element>
+
+  <view name="Bezel">
+    <screen index="0">
+      <bounds x="240" y="30" width="1440" height="1022"/>
+    </screen>
+   <bezel element="Background">
+      <bounds x="0" y="0" width="1920" height="1080"/>
+    </bezel>
+    <bezel element="Bezel">
+      <bounds x="0" y="0" width="1920" height="1080"/>
+    </bezel>
+  </view>
+
+  <view name="Bezel2">
+    <screen index="0">
+      <bounds x="360" y="100" width="1206" height="884"/>
+    </screen>
+   <bezel element="Background2">
+      <bounds x="116" y="78" width="1697" height="926"/>
+    </bezel>
+    <bezel element="Bezel2">
+      <bounds x="0" y="0" width="1920" height="1080"/>
+    </bezel>
+  </view>
+
+
+</mamelayout>
