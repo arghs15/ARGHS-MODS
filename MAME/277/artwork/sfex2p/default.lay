@@ -238,6 +238,16 @@
 				local p2_last_char = 0x30        -- MUST be 0x30, not 0x20
 				local p1_stable_char = 0x30      -- MUST be 0x30, not 0x20
 				local p2_stable_char = 0x30      -- MUST be 0x30, not 0x20
+
+				-- Stability tracking (frame-based instead of time-based)
+				local p1_change_count = 0
+				local p2_change_count = 0
+				local p1_pending_char = 0x30
+				local p2_pending_char = 0x30
+				local stability_threshold = 10   -- Require 10 consecutive frames of same character
+				local frame_counter = 0
+				local last_change_frame = 0
+				local min_frames_between_changes = 60  -- At least 1 second at 60fps between changes
 				
 				-- Character variant mapping - All characters have 2 portraits
 				local variants = {
@@ -281,42 +291,82 @@
 					
 					view:set_prepare_items_callback(
 						function()
+							frame_counter = frame_counter + 1
+							
 							-- Read character data
 							local p1_current = mem:read_u8(0x1F010)
 							local p2_current = mem:read_u8(0x1F011)
 							
-							-- ADD DEBUG HERE - right after reading the data
-							if p1_stable_char == 0x30 and p2_stable_char == 0x30 then
-								print(string.format("SFEX2P DEBUG: Initial state - P1_stable: 0x%02X, P2_stable: 0x%02X, P1_current: 0x%02X, P2_current: 0x%02X", 
-									p1_stable_char, p2_stable_char, p1_current, p2_current))
+							-- Rate limiting: prevent too many changes per timeframe
+							if (frame_counter - last_change_frame) < min_frames_between_changes then
+								-- Skip processing if too soon after last change
+								-- But still handle manual triggers and display updates
+								goto skip_character_detection
 							end
 							
-							-- PURE ORIGINAL LOGIC: Only update on valid data, ignore invalid data
+							-- P1 Stability checking
 							if p1_current >= 0x01 and p1_current <= 0x17 then
-								if p1_current ~= p1_stable_char then
-									p1_using_variant = false
-									print(string.format("SFEX2P: P1 character changed from 0x%02X to 0x%02X", p1_stable_char, p1_current))
+								if p1_current == p1_pending_char then
+									p1_change_count = p1_change_count + 1
+									if p1_change_count >= stability_threshold then
+										-- Character is stable, apply the change
+										if p1_pending_char ~= p1_stable_char then
+											p1_using_variant = false
+											print(string.format("SFEX2P: P1 character STABLE changed from 0x%02X to 0x%02X (frame %d)", p1_stable_char, p1_pending_char, frame_counter))
+											p1_stable_char = p1_pending_char
+											last_change_frame = frame_counter
+										end
+										p1_change_count = 0
+									end
+								else
+									-- New character detected, start stability counter
+									p1_pending_char = p1_current
+									p1_change_count = 1
 								end
-								p1_stable_char = p1_current
+							else
+								-- Invalid character, reset stability
+								p1_change_count = 0
+								p1_pending_char = p1_stable_char
 							end
 							
+							-- P2 Stability checking (same logic)
 							if p2_current >= 0x01 and p2_current <= 0x17 then
-								if p2_current ~= p2_stable_char then
-									p2_using_variant = false
-									print(string.format("SFEX2P: P2 character changed from 0x%02X to 0x%02X", p2_stable_char, p2_current))
+								if p2_current == p2_pending_char then
+									p2_change_count = p2_change_count + 1
+									if p2_change_count >= stability_threshold then
+										-- Character is stable, apply the change
+										if p2_pending_char ~= p2_stable_char then
+											p2_using_variant = false
+											print(string.format("SFEX2P: P2 character STABLE changed from 0x%02X to 0x%02X (frame %d)", p2_stable_char, p2_pending_char, frame_counter))
+											p2_stable_char = p2_pending_char
+											last_change_frame = frame_counter
+										end
+										p2_change_count = 0
+									end
+								else
+									-- New character detected, start stability counter
+									p2_pending_char = p2_current
+									p2_change_count = 1
 								end
-								p2_stable_char = p2_current
+							else
+								-- Invalid character, reset stability
+								p2_change_count = 0
+								p2_pending_char = p2_stable_char
 							end
 							
-							-- Check for manual reset requests (new communication flags)
-							local reset_p1 = mem:read_u8(0x2E0003)  -- New flag for P1 reset
-							local reset_p2 = mem:read_u8(0x2E0004)  -- New flag for P2 reset
-							local reset_both = mem:read_u8(0x2E0005) -- New flag for both reset
+							::skip_character_detection::
+							
+							-- Check for manual reset requests
+							local reset_p1 = mem:read_u8(0x2E0003)
+							local reset_p2 = mem:read_u8(0x2E0004)
+							local reset_both = mem:read_u8(0x2E0005)
 							
 							if reset_p1 > 0 then
 								mem:write_u8(0x2E0003, 0)
 								p1_stable_char = 0x30
 								p1_using_variant = false
+								p1_change_count = 0
+								p1_pending_char = 0x30
 								print("SFEX2P: P1 manually reset to blank")
 							end
 							
@@ -324,6 +374,8 @@
 								mem:write_u8(0x2E0004, 0)
 								p2_stable_char = 0x30
 								p2_using_variant = false
+								p2_change_count = 0
+								p2_pending_char = 0x30
 								print("SFEX2P: P2 manually reset to blank")
 							end
 							
@@ -333,6 +385,10 @@
 								p2_stable_char = 0x30
 								p1_using_variant = false
 								p2_using_variant = false
+								p1_change_count = 0
+								p2_change_count = 0
+								p1_pending_char = 0x30
+								p2_pending_char = 0x30
 								print("SFEX2P: Both players manually reset to blank")
 							end
 							
@@ -340,11 +396,7 @@
 							local p1_display_char = p1_stable_char
 							local p2_display_char = p2_stable_char
 							
-							-- Update tracking
-							p1_last_char = p1_display_char
-							p2_last_char = p2_display_char
-							
-							-- Handle cycle requests (same as before)
+							-- Handle cycle requests
 							local p1_cycle = mem:read_u8(cycle_flag_p1)
 							local p2_cycle = mem:read_u8(cycle_flag_p2)
 							local both_cycle = mem:read_u8(cycle_flag_both)
