@@ -1,9 +1,10 @@
 {
-  "plugin": {
-    "name": "character_variants",
-    "description": "Cycle through character variant images with button/key press",
-    "version": "1.0",
-    "author": "Custom",
-    "type": "plugin"
-  }
+	"plugin": {
+		"name": "viewswitch",
+		"description": "Quick view switch plugin",
+		"version": "0.0.4",
+		"author": "Vas Crabb",
+		"type": "plugin",
+		"start": "false"
+	  }
 }
