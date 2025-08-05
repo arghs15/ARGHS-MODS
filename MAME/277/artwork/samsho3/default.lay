@@ -290,7 +290,25 @@
 				view:set_prepare_items_callback(
 					function()
 						local p1_state = mem:read_u8(0x108470)
-						local p2_state = mem:read_u8(0x108471)
+						
+						-- For P2, try to get from our Lua module's tracking
+						local p2_state = 0x1E -- default to blank
+						
+						-- Try to access the samsho3 module's tracked P2 character
+						if samsho3 and samsho3.get_p2_display_character then
+							local tracked_p2 = samsho3.get_p2_display_character()
+							if tracked_p2 and tracked_p2 > 0 then
+								p2_state = tracked_p2
+							end
+						end
+						
+						-- If we couldn't get tracked P2, try reading memory as fallback
+						if p2_state == 0x1E then
+							local p2_raw = mem:read_u8(0x108471)
+							if p2_raw <= 0x0D or (p2_raw >= 0x20 and p2_raw <= 0x40) then
+								p2_state = p2_raw
+							end
+						end
 						
 						-- Validate P1 state
 						if p1_state <= 0x0D then
@@ -299,15 +317,6 @@
 							-- Variant state, use directly
 						else
 							p1_state = 0x1E -- blank for invalid
-						end
-						
-						-- Validate P2 state
-						if p2_state <= 0x0D then
-							-- Base character, use as-is
-						elseif p2_state >= 0x20 and p2_state <= 0x40 then
-							-- Variant state, use directly
-						else
-							p2_state = 0x1E -- blank for invalid
 						end
 						
 						p1char:set_state(p1_state)
