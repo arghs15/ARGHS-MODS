@@ -275,25 +275,39 @@
 			-- Function to setup character portraits for a view
 			local function setup_view_portraits(view_name)
 				local view = file.views[view_name]
-				if not view then return end
+				if not view then 
+					print("SAMSHO3: View '" .. view_name .. "' not found")
+					return 
+				end
 				
 				local p1char = view.items["pt_p1"]
 				local p2char = view.items["pt_p2"]
-				if not p1char or not p2char then return end
+				if not p1char or not p2char then 
+					print("SAMSHO3: Portrait elements not found in view '" .. view_name .. "'")
+					return 
+				end
 				
 				view:set_prepare_items_callback(
 					function()
-						-- SIMPLIFIED: Just read character memory directly
 						local p1_state = mem:read_u8(0x108470)
 						local p2_state = mem:read_u8(0x108471)
 						
-						-- Validate states
-						if p1_state > 0x40 or (p1_state > 0x0D and p1_state < 0x20) then
-							p1_state = 0x1E -- blank
+						-- Validate P1 state
+						if p1_state <= 0x0D then
+							-- Base character, use as-is
+						elseif p1_state >= 0x20 and p1_state <= 0x40 then
+							-- Variant state, use directly
+						else
+							p1_state = 0x1E -- blank for invalid
 						end
 						
-						if p2_state > 0x40 or (p2_state > 0x0D and p2_state < 0x20) then
-							p2_state = 0x1E -- blank
+						-- Validate P2 state
+						if p2_state <= 0x0D then
+							-- Base character, use as-is
+						elseif p2_state >= 0x20 and p2_state <= 0x40 then
+							-- Variant state, use directly
+						else
+							p2_state = 0x1E -- blank for invalid
 						end
 						
 						p1char:set_state(p1_state)
@@ -309,5 +323,5 @@
 			setup_view_portraits("SAMSHO3 Bezel 4:3 Dark")
 		end
 	)
-]]></script>
+	]]></script>
 </mamelayout>
