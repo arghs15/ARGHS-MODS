@@ -1,0 +1,9 @@
+{
+  "plugin": {
+    "name": "character_variants",
+    "description": "Cycle through character variant images with button/key press",
+    "version": "1.0",
+    "author": "Custom",
+    "type": "plugin"
+  }
+}

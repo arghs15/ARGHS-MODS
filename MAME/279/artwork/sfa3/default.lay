@@ -1,0 +1,393 @@
+<?xml version="1.0"?>
+
+<!-- SFA3 Layout file with multiple bezel options -->
+<!-- Authors - InigoMontoya (CoinOps Discord:https://discord.gg/RfMxcFvg), Hugo_Stiglitz_DA (Mortal Kombat Plus Discord:https://discord.gg/qu7EXzYU),
+Artwork - BloodyDrake -->
+
+<mamelayout version="2">
+	
+	<!-- SFA3 bezels -->
+	<element name="border">
+		<image file="sfa3_bezel_43.png"/>
+	</element>
+	<element name="border_ws">
+		<image file="sfa3_bezel_ws.png"/>
+	</element>
+	
+	<!-- Overlay elements -->
+	<element name="overlay_day">
+  		<image file="..\overlayDay.png"/>
+	</element>
+	<element name="overlay_day_ws">
+  		<image file="..\overlayDayWS.png"/>
+	</element>
+
+	<!-- Overlay elements -->
+	<element name="overlay_night">
+  		<image file="..\overlayNight.png"/>
+	</element>
+	<element name="overlay_night_ws">
+  		<image file="..\overlayNightWS.png"/>
+	</element>
+
+	<!-- Lights On -->
+	<element name="Background">
+		<image file="..\DefaultBezelH.png"/>
+	</element>
+	<element name="Bezel">
+		<image file="Bezel.png"/>
+	</element>
+
+	<element name="portrait_left" defstate="0x20">
+		<image state="0x00" file="Ryu 01 - leftCenter.png" />
+		<image state="0x01" file="Ken 01 - leftCenter.png" />
+		<image state="0x02" file="Akuma 01 - leftCenter.png" />
+		<image state="0x03" file="Charlie 01 - leftCenter.png" />
+		<image state="0x04" file="Chun Li 01 - leftCenter.png" />
+		<image state="0x05" file="Adon 01 - leftCenter.png" />
+		<image state="0x06" file="Sodom 01 - leftCenter.png" />
+		<image state="0x07" file="Guy 01 - leftCenter.png" />
+		<image state="0x08" file="Birdie 01 - leftCenter.png" />
+		<image state="0x09" file="Rose 01 - leftCenter.png" />
+		<image state="0x0A" file="M Bison 01 - leftCenter.png" />
+		<image state="0x0B" file="Sagat 01 - leftCenter.png" />
+		<image state="0x0C" file="Dan 01 - leftCenter.png" />
+		<image state="0x0D" file="Sakura 01 - leftCenter.png" />
+		<image state="0x0E" file="Rolento 01 - leftCenter.png" />
+		<image state="0x0F" file="Dhalsim 01 - leftCenter.png" />
+		<image state="0x10" file="Zangief 01 - leftCenter.png" />
+		<image state="0X11" file="Gen 01 - leftCenter.png" />
+		<image state="0x13" file="Gen 02 - leftCenter.png" />
+		<image state="0x15" file="Balrog 01 - leftCenter.png" />
+		<image state="0x16" file="Cammy 01 - leftCenter.png" />
+		<image state="0x18" file="E Honda 01 - leftCenter.png" />
+		<image state="0x19" file="Blanka 01 - leftCenter.png" />
+		<image state="0x1A" file="R Mika 01 - leftCenter.png" />
+		<image state="0x1B" file="Cody 01 - leftCenter.png" />
+		<image state="0x1C" file="Vega 01 - leftCenter.png" />
+		<image state="0x1D" file="Karin 01 - leftCenter.png" />
+		<image state="0x1E" file="Juli 01 - leftCenter.png" />
+		<image state="0x1F" file="Juni 01 - leftCenter.png" />
+		<image state="0x20" file="blank.png" />
+	
+		<image state="0x34" file="Adon 02 - leftCenter.png" />
+		<image state="0x38" file="Akuma 02 - leftCenter.png" />
+		<image state="0x3A" file="Akuma 03 - leftCenter.png" />
+		<image state="0x3C" file="Akuma 04 - leftCenter.png" />
+		<image state="0x44" file="Birdie 02 - leftCenter.png" />
+		<image state="0x48" file="Blanka 02 - leftCenter.png" />
+		<image state="0x4C" file="Cammy 02 - leftCenter.png" />
+		<image state="0x50" file="Chun Li 02 - leftCenter.png" />
+		<image state="0x54" file="Cody 02 - leftCenter.png" />
+		<image state="0x58" file="Dan 02 - leftCenter.png" />
+		<image state="0x5A" file="Dan 03 - leftCenter.png" />
+		<image state="0x60" file="Dhalsim 02 - leftCenter.png" />
+		<image state="0x62" file="Dhalsim 03 - leftCenter.png" />
+		<image state="0x68" file="E Honda 02 - leftCenter.png" />
+		<image state="0x6C" file="Gen 03 - leftCenter.png" />
+		<image state="0x70" file="Guy 02 - leftCenter.png" />
+		<image state="0x74" file="Karin 02 - leftCenter.png" />
+		<image state="0x76" file="Karin 03 - leftCenter.png" />
+		<image state="0x7C" file="Ken 02 - leftCenter.png" />
+		<image state="0x80" file="R Mika 02 - leftCenter.png" />
+		<image state="0x82" file="R Mika 03 - leftCenter.png" />
+		<image state="0x88" file="M Bison 02 - leftCenter.png" />
+		<image state="0x8A" file="M Bison 03 - leftCenter.png" />
+		<image state="0x90" file="Rolento 02 - leftCenter.png" />
+		<image state="0x92" file="Rolento 03 - leftCenter.png" />
+		<image state="0x98" file="Rose 02 - leftCenter.png" />
+		<image state="0x9C" file="Ryu 02 - leftCenter.png" />
+		<image state="0x9E" file="Ryu 03 - leftCenter.png" />
+		<image state="0xA4" file="Sagat 02 - leftCenter.png" />
+		<image state="0xA8" file="Sakura 02 - leftCenter.png" />
+		<image state="0xAC" file="Sodom 02 - leftCenter.png" />
+		<image state="0xB0" file="Vega 02 - leftCenter.png" />
+		<image state="0xB2" file="Vega 03 - leftCenter.png" />
+		<image state="0xB4" file="Vega 04 - leftCenter.png" />
+		<image state="0xBC" file="Zangief 02 - leftCenter.png" />
+		<!-- Additional variant states for new characters -->
+		<image state="0xC0" file="Balrog 02 - leftCenter.png" />
+		<image state="0xC2" file="Balrog 03 - leftCenter.png" />
+		<image state="0xC4" file="Juli 02 - leftCenter.png" />
+		<image state="0xC6" file="Juni 02 - leftCenter.png" />
+		<image state="0xC8" file="Juni 03 - leftCenter.png" />
+	</element>
+	<element name="portrait_right" defstate="0x20">
+		<image state="0x00" file="Ryu 01 - rightCenter.png" />
+		<image state="0x01" file="Ken 01 - rightCenter.png" />
+		<image state="0x02" file="Akuma 01 - rightCenter.png" />
+		<image state="0x03" file="Charlie 01 - rightCenter.png" />
+		<image state="0x04" file="Chun Li 01 - rightCenter.png" />
+		<image state="0x05" file="Adon 01 - rightCenter.png" />
+		<image state="0x06" file="Sodom 01 - rightCenter.png" />
+		<image state="0x07" file="Guy 01 - rightCenter.png" />
+		<image state="0x08" file="Birdie 01 - rightCenter.png" />
+		<image state="0x09" file="Rose 01 - rightCenter.png" />
+		<image state="0x0A" file="M Bison 01 - rightCenter.png" />
+		<image state="0x0B" file="Sagat 01 - rightCenter.png" />
+		<image state="0x0C" file="Dan 01 - rightCenter.png" />
+		<image state="0x0D" file="Sakura 01 - rightCenter.png" />
+		<image state="0x0E" file="Rolento 01 - rightCenter.png" />
+		<image state="0x0F" file="Dhalsim 01 - rightCenter.png" />
+		<image state="0x10" file="Zangief 01 - rightCenter.png" />
+		<image state="0X11" file="Gen 01 - rightCenter.png" />
+		<image state="0x13" file="Gen 02 - rightCenter.png" />
+		<image state="0x15" file="Balrog 01 - rightCenter.png" />
+		<image state="0x16" file="Cammy 01 - rightCenter.png" />
+		<image state="0x18" file="E Honda 01 - rightCenter.png" />
+		<image state="0x19" file="Blanka 01 - rightCenter.png" />
+		<image state="0x1A" file="R Mika 01 - rightCenter.png" />
+		<image state="0x1B" file="Cody 01 - rightCenter.png" />
+		<image state="0x1C" file="Vega 01 - rightCenter.png" />
+		<image state="0x1D" file="Karin 01 - rightCenter.png" />
+		<image state="0x1E" file="Juli 01 - rightCenter.png" />
+		<image state="0x1F" file="Juni 01 - rightCenter.png" />
+		<image state="0x20" file="blank.png" />
+	
+		<image state="0x36" file="Adon 02 - rightCenter.png" />
+		<image state="0x3E" file="Akuma 02 - rightCenter.png" />
+		<image state="0x40" file="Akuma 03 - rightCenter.png" />
+		<image state="0x42" file="Akuma 04 - rightCenter.png" />
+		<image state="0x46" file="Birdie 02 - rightCenter.png" />
+		<image state="0x4A" file="Blanka 02 - rightCenter.png" />
+		<image state="0x4E" file="Cammy 02 - rightCenter.png" />
+		<image state="0x52" file="Chun Li 02 - rightCenter.png" />
+		<image state="0x56" file="Cody 02 - rightCenter.png" />
+		<image state="0x5C" file="Dan 02 - rightCenter.png" />
+		<image state="0x5E" file="Dan 03 - rightCenter.png" />
+		<image state="0x64" file="Dhalsim 02 - rightCenter.png" />
+		<image state="0x66" file="Dhalsim 03 - rightCenter.png" />
+		<image state="0x6A" file="E Honda 02 - rightCenter.png" />
+		<image state="0x6E" file="Gen 03 - rightCenter.png" />
+		<image state="0x72" file="Guy 02 - rightCenter.png" />
+		<image state="0x78" file="Karin 02 - rightCenter.png" />
+		<image state="0x7A" file="Karin 03 - rightCenter.png" />
+		<image state="0x7E" file="Ken 02 - rightCenter.png" />
+		<image state="0x84" file="R Mika 02 - rightCenter.png" />
+		<image state="0x86" file="R Mika 03 - rightCenter.png" />
+		<image state="0x8C" file="M Bison 02 - rightCenter.png" />
+		<image state="0x8E" file="M Bison 03 - rightCenter.png" />
+		<image state="0x94" file="Rolento 02 - rightCenter.png" />
+		<image state="0x96" file="Rolento 03 - rightCenter.png" />
+		<image state="0x9A" file="Rose 02 - rightCenter.png" />
+		<image state="0xA0" file="Ryu 02 - rightCenter.png" />
+		<image state="0xA2" file="Ryu 03 - rightCenter.png" />
+		<image state="0xA6" file="Sagat 02 - rightCenter.png" />
+		<image state="0xAA" file="Sakura 02 - rightCenter.png" />
+		<image state="0xAE" file="Sodom 02 - rightCenter.png" />
+		<image state="0xB6" file="Vega 02 - rightCenter.png" />
+		<image state="0xB8" file="Vega 03 - rightCenter.png" />
+		<image state="0xBA" file="Vega 04 - rightCenter.png" />
+		<image state="0xBE" file="Zangief 02 - rightCenter.png" />
+		<!-- Additional variant states for new characters -->
+		<image state="0xC1" file="Balrog 02 - rightCenter.png" />
+		<image state="0xC3" file="Balrog 03 - rightCenter.png" />
+		<image state="0xC5" file="Juli 02 - rightCenter.png" />
+		<image state="0xC7" file="Juni 02 - rightCenter.png" />
+		<image state="0xC9" file="Juni 03 - rightCenter.png" />
+	</element>
+	<!-- SFA3 Widescreen Bezel View -->
+	<view name="SFA3 Bezel WS">
+		<element ref="border_ws">
+			<bounds x="0" y="0" width="1920" height="1080"/>
+		</element>
+		<screen index="0">
+			<bounds x="192" y="0" width="1536" height="1080" />
+		</screen>
+		<!-- Add overlayDayWS on top of bezel -->
+		<element ref="overlay_day_ws">
+			<bounds x="0" y="0" width="1920" height="1080"/>
+		</element>
+		<element id="pt_p1" ref="portrait_left">
+			<bounds x="0" y="5" width="180" height="953"/>
+		</element>
+		<element id="pt_p2" ref="portrait_right">
+			<bounds x="1740" y="5" width="180" height="953"/>
+		</element>
+	</view>
+	
+	<!-- SFA3 4:3 Bezel View -->
+	<view name="SFA3 Bezel 4:3">
+		<!-- Base bezel -->
+		<element ref="border">
+			<bounds x="20" y="0" width="1880" height="1080"/>
+		</element>
+		<screen index="0">
+			<bounds x="240" y="0" width="1440" height="1080"/>
+		</screen>
+		<!-- Add overlayDay on top of bezel -->
+		<element ref="overlay_day">
+			<bounds x="0" y="0" width="1920" height="1080"/>
+		</element>
+		<!-- Left portrait -->
+		<element id="pt_p1" ref="portrait_left">
+			<bounds x="35" y="5" width="180" height="953"/>
+		</element>
+		<!-- Right portrait -->
+		<element id="pt_p2" ref="portrait_right">
+			<bounds x="1705" y="5" width="180" height="953"/>
+		</element>
+	</view>
+	
+	<!-- SFA3 Widescreen Bezel Dark View -->
+	<view name="SFA3 Bezel WS Dark">
+		<element ref="border_ws">
+			<bounds x="0" y="0" width="1920" height="1080"/>
+		</element>
+		<screen index="0">
+			<bounds x="192" y="0" width="1536" height="1080" />
+		</screen>
+		<!-- Add overlayNightWS on top of bezel -->
+		<element ref="overlay_night_ws">
+			<bounds x="0" y="0" width="1920" height="1080"/>
+		</element>
+		<element id="pt_p1" ref="portrait_left">
+			<bounds x="0" y="5" width="180" height="953"/>
+		</element>
+		<element id="pt_p2" ref="portrait_right">
+			<bounds x="1740" y="5" width="180" height="953"/>
+		</element>
+	</view>
+
+	<!-- SFA3 4:3 Bezel Dark View -->
+	<view name="SFA3 Bezel 4:3 Dark">
+		<!-- Base bezel -->
+		<element ref="border">
+			<bounds x="20" y="0" width="1880" height="1080"/>
+		</element>
+		<screen index="0">
+			<bounds x="240" y="0" width="1440" height="1080"/>
+		</screen>
+		<!-- Add overlayNight on top of bezel -->
+		<element ref="overlay_night">
+			<bounds x="0" y="0" width="1920" height="1080"/>
+		</element>
+		<!-- Left portrait -->
+		<element id="pt_p1" ref="portrait_left">
+			<bounds x="35" y="5" width="180" height="953"/>
+		</element>
+		<!-- Right portrait -->
+		<element id="pt_p2" ref="portrait_right">
+			<bounds x="1705" y="5" width="180" height="953"/>
+		</element>
+	</view>
+
+	<!-- Lights Out -->
+	<view name="Lights Out">
+		<screen index="0">
+			<bounds x="240" y="30" width="1440" height="1022"/>
+		</screen>
+	<element ref="Background">
+			<bounds x="0" y="0" width="1920" height="1080"/>
+		</element>
+		<element ref="Bezel">
+			<bounds x="0" y="0" width="1920" height="1080"/>
+		</element>
+	</view>
+
+	<script><![CDATA[
+		file:set_resolve_tags_callback(
+			function()
+				local cpu = file.device:subdevice(":maincpu")
+				local mem = cpu.spaces["program"]
+				
+				-- Function to setup character portraits for a view
+				local function setup_view_portraits(view_name)
+					local view = file.views[view_name]
+					if not view then return end
+					
+					local p1char = view.items["pt_p1"]
+					local p2char = view.items["pt_p2"]
+					if not p1char or not p2char then return end
+					
+					-- Variant override memory locations
+					local p1_override_active = 0xFF9100
+					local p1_override_state = 0xFF9101
+					local p2_override_active = 0xFF9102
+					local p2_override_state = 0xFF9103
+					
+					-- Debug counter
+					local debug_counter = 0
+					
+					view:set_prepare_items_callback(
+						function()
+							debug_counter = debug_counter + 1
+							local p1_state, p2_state
+							
+							-- Debug every 60 frames
+							if debug_counter % 60 == 0 then
+								local p1_override = mem:read_u8(p1_override_active)
+								local p1_override_val = mem:read_u8(p1_override_state)
+								local p1_char = mem:read_u8(0xFF8502)
+								print(string.format("DEBUG SFA3 %s: Frame %d - P1 Override=%d, State=0x%02X, Char=0x%02X", 
+									view_name, debug_counter, p1_override, p1_override_val, p1_char))
+							end
+							
+							-- Check P1 variant override
+							local p1_override = mem:read_u8(p1_override_active)
+							if p1_override == 1 then
+								p1_state = mem:read_u8(p1_override_state)
+								if debug_counter % 60 == 0 then
+									print(string.format("DEBUG SFA3 %s: Using P1 override 0x%02X", view_name, p1_state))
+								end
+							else
+								-- Original SFA3 detection logic
+								if mem:read_u16(0xff8550) > 0 or mem:read_u16(0xff06b8) == 65535 or mem:read_u8(0xff8640) == 1 then
+									p1_state = mem:read_u8(0xFF8502)
+								elseif mem:read_u16(0xff06b8) ~= 65535 and 
+									mem:read_u16(0xff06b8) ~= 0 and 
+									mem:read_u16(0xff86B0) == 0 and 
+									mem:read_u16(0xFF02EC) == 192 and
+									mem:read_u16(0xff06b8) ~= 57456 then
+										p1_state = mem:read_u8(0xFF8502)
+								elseif mem:read_u16(0xff06b8) ~= 65535 and 
+									mem:read_u16(0xff06b8) ~= 0 and 
+									mem:read_u16(0xff86B0) == 0 and 
+									mem:read_u16(0xFF02EC) == 192 and
+									mem:read_u16(0xff06b8) == 57456 then
+										p1_state = 0x20
+								else 
+									p1_state = 0x20
+								end
+							end
+							
+							-- Check P2 variant override
+							local p2_override = mem:read_u8(p2_override_active)
+							if p2_override == 1 then
+								p2_state = mem:read_u8(p2_override_state)
+							else
+								-- Original SFA3 detection logic for P2
+								if mem:read_u16(0xff8550) > 0 or mem:read_u16(0xff06b8) == 65535 or mem:read_u8(0xff8640) == 1 then
+									p2_state = mem:read_u8(0xFF8902)
+								elseif mem:read_u16(0xff06b8) ~= 65535 and 
+									mem:read_u16(0xff06b8) ~= 0 and 
+									mem:read_u16(0xff86B0) == 0 and 
+									mem:read_u16(0xFF02EC) == 192 and
+									mem:read_u16(0xff06b8) == 57456 then
+										p2_state = mem:read_u8(0xFF8902)
+								elseif mem:read_u16(0xff06b8) ~= 65535 and 
+									mem:read_u16(0xff06b8) ~= 0 and 
+									mem:read_u16(0xff86B0) == 0 and 
+									mem:read_u16(0xFF02EC) == 192 and
+									mem:read_u16(0xff06b8) ~= 57456 then
+										p2_state = 0x20
+								else 
+									p2_state = 0x20
+								end
+							end
+							
+							p1char:set_state(p1_state)
+							p2char:set_state(p2_state)
+						end
+					)
+				end
+				
+				-- Setup portraits for all views
+				setup_view_portraits("SFA3 Bezel 4:3")
+				setup_view_portraits("SFA3 Bezel WS")
+				setup_view_portraits("SFA3 Bezel 4:3 Dark")
+				setup_view_portraits("SFA3 Bezel WS Dark")
+			end
+		)
+	]]></script>
+</mamelayout>

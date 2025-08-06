@@ -1,0 +1,280 @@
+<?xml version="1.0"?>
+
+<!-- Authors - InigoMontoya (CoinOPs Discord:https://discord.gg/RfMxcFvg), Hugo_Stiglitz_DA (Mortal Kombat Plus Discord:https://discord.gg/qu7EXzYU),
+Artwork - BloodyDrake -->
+
+<mamelayout version="2">
+	
+	<!-- XMVSF bezels -->
+	<element name="border">
+		<image file="xmvsf_bezel_43.png"/>
+	</element>
+	<element name="border_ws">
+		<image file="xmvsf_bezel_ws.png"/>
+	</element>
+	
+	<!-- Overlay elements -->
+	<element name="overlay_day">
+  		<image file="..\overlayDay.png"/>
+	</element>
+	<element name="overlay_day_ws">
+  		<image file="..\overlayDayWS.png"/>
+	</element>
+
+	<!-- Overlay elements -->
+	<element name="overlay_night">
+  		<image file="..\overlayNight.png"/>
+	</element>
+	<element name="overlay_night_ws">
+  		<image file="..\overlayNightWS.png"/>
+	</element>
+
+	<!-- Lights Out -->
+	<element name="Background">
+		<image file="..\DefaultBezelH.png"/>
+	</element>
+	<element name="Bezel">
+		<image file="Bezel.png"/>
+	</element>
+
+	<!-- Dark Overlay -->
+	<element name="Background_dark">
+		<image file="..\vignette.png"/>
+	</element>
+
+	<element name="portrait_left" defstate="30">
+		<image state="0x00" file="Wolverine 01 - leftCenter.png" />
+		<image state="0x02" file="Cyclops 01 - leftCenter.png" />
+		<image state="0x04" file="Storm 01 - leftCenter.png" />
+		<image state="0x06" file="Rogue 01 - leftCenter.png" />
+		<image state="0x08" file="Gambit 01 - leftCenter.png" />
+		<image state="0x0A" file="Sabretooth 01 - leftCenter.png" />
+		<image state="0x0C" file="Juggernaut 01 - leftCenter.png" />
+		<image state="0x0E" file="Magneto 01 - leftCenter.png" />
+		<image state="0x10" file="blank.png" />
+		<image state="0X12" file="Ryu 01 - leftCenter.png" />
+		<image state="0x14" file="Ken 01 - leftCenter.png" />
+		<image state="0x16" file="Chun Li 01 - leftCenter.png" />
+		<image state="0x18" file="Dhalsim 01 - leftCenter.png" />
+		<image state="0x1A" file="Zangief 01 - leftCenter.png" />
+		<image state="0x1C" file="M Bison 01 - leftCenter.png" />
+		<image state="0X1E" file="Akuma 01 - leftCenter.png" />
+		<image state="0x20" file="Charlie 01 - leftCenter.png" />
+		<image state="0x22" file="Cammy 01 - leftCenter.png" />
+		<image state="0x26" file="blank.png"/>
+
+		<image state="0x34" file="Akuma 02 - leftCenter.png" />
+		<image state="0x38" file="Cammy 02 - leftCenter.png" />
+		<image state="0x3C" file="Charlie 02 - leftCenter.png" />
+		<image state="0x40" file="Cyclops 02 - leftCenter.png" />
+		<image state="0x44" file="M Bison 02 - leftCenter.png" />
+		<image state="0x48" file="Magneto 02 - leftCenter.png" />
+		<image state="0x4C" file="Storm 02 - leftCenter.png" />
+		<image state="0x50" file="Wolverine 02 - leftCenter.png" />
+		<image state="0x54" file="Zangief 02 - leftCenter.png" />
+	</element>
+	<element name="portrait_right" defstate="30">
+		<image state="0x00" file="Wolverine 01 - rightCenter.png" />
+		<image state="0x02" file="Cyclops 01 - rightCenter.png" />
+		<image state="0x04" file="Storm 01 - rightCenter.png" />
+		<image state="0x06" file="Rogue 01 - rightCenter.png" />
+		<image state="0x08" file="Gambit 01 - rightCenter.png" />
+		<image state="0x0A" file="Sabretooth 01 - rightCenter.png" />
+		<image state="0x0C" file="Juggernaut 01 - rightCenter.png" />
+		<image state="0x0E" file="Magneto 01 - rightCenter.png" />
+		<image state="0x10" file="blank.png" />
+		<image state="0X12" file="Ryu 01 - rightCenter.png" />
+		<image state="0x14" file="Ken 01 - rightCenter.png" />
+		<image state="0x16" file="Chun Li 01 - rightCenter.png" />
+		<image state="0x18" file="Dhalsim 01 - rightCenter.png" />
+		<image state="0x1A" file="Zangief 01 - rightCenter.png" />
+		<image state="0x1C" file="M Bison 01 - rightCenter.png" />
+		<image state="0X1E" file="Akuma 01 - rightCenter.png" />
+		<image state="0x20" file="Charlie 01 - rightCenter.png" />
+		<image state="0x22" file="Cammy 01 - rightCenter.png" />
+		<image state="0x26" file="blank.png"/>
+
+		<image state="0x36" file="Akuma 02 - rightCenter.png" />
+		<image state="0x3A" file="Cammy 02 - rightCenter.png" />
+		<image state="0x3E" file="Charlie 02 - rightCenter.png" />
+		<image state="0x42" file="Cyclops 02 - rightCenter.png" />
+		<image state="0x46" file="M Bison 02 - rightCenter.png" />
+		<image state="0x4A" file="Magneto 02 - rightCenter.png" />
+		<image state="0x4E" file="Storm 02 - rightCenter.png" />
+		<image state="0x52" file="Wolverine 02 - rightCenter.png" />
+		<image state="0x56" file="Zangief 02 - rightCenter.png" />
+	</element>
+	<!-- XMVSF Widescreen Bezel View (Default) -->
+	<view name="XMVSF Bezel WS">
+		<element ref="border_ws">
+			<bounds x="0" y="0" width="1920" height="1080"/>
+		</element>
+		<screen index="0">
+			<bounds x="192" y="0" width="1536" height="1080" />
+		</screen>
+		<!-- Add overlayDayWS on top of bezel -->
+		<element ref="overlay_day_ws">
+			<bounds x="0" y="0" width="1920" height="1080"/>
+		</element>
+		<element id="pt_p1" ref="portrait_left">
+			<bounds x="0" y="5" width="180" height="953"/>
+		</element>
+		<element id="pt_p2" ref="portrait_right">
+			<bounds x="1740" y="5" width="180" height="953"/>
+		</element>
+	</view>
+
+	<!-- XMVSF 4:3 Bezel View -->
+	<view name="XMVSF Bezel 4:3">
+		<!-- Base bezel -->
+		<element ref="border">
+			<bounds x="20" y="0" width="1880" height="1080"/>
+		</element>
+		<screen index="0">
+			<bounds x="240" y="0" width="1440" height="1080"/>
+		</screen>
+		<!-- Add overlayDay on top of bezel -->
+		<element ref="overlay_day">
+			<bounds x="0" y="0" width="1920" height="1080"/>
+		</element>
+		<!-- Left portrait -->
+		<element id="pt_p1" ref="portrait_left">
+			<bounds x="35" y="5" width="180" height="953"/>
+		</element>
+		<!-- Right portrait -->
+		<element id="pt_p2" ref="portrait_right">
+			<bounds x="1705" y="5" width="180" height="953"/>
+		</element>
+	</view>
+
+	<!-- XMVSF Widescreen Bezel Dark View -->
+	<view name="XMVSF Bezel 4:3 Dark">
+		<element ref="border_ws">
+			<bounds x="0" y="0" width="1920" height="1080"/>
+		</element>
+		<screen index="0">
+			<bounds x="192" y="0" width="1536" height="1080" />
+		</screen>
+		<element ref="Background_dark">
+			<bounds x="0" y="0" width="1920" height="1080"/>
+		</element>
+		<!-- Add overlayNightWS on top of bezel -->
+		<element ref="overlay_night_ws">
+			<bounds x="0" y="0" width="1920" height="1080"/>
+		</element>
+		<element id="pt_p1" ref="portrait_left">
+			<bounds x="0" y="5" width="180" height="953"/>
+		</element>
+		<element id="pt_p2" ref="portrait_right">
+			<bounds x="1740" y="5" width="180" height="953"/>
+		</element>
+	</view>
+
+	<!-- XMVSF 4:3 Bezel Dark View -->
+	<view name="XMVSF Bezel WS Dark">
+		<!-- Base bezel -->
+		<element ref="border">
+			<bounds x="20" y="0" width="1880" height="1080"/>
+		</element>
+		<screen index="0">
+			<bounds x="240" y="0" width="1440" height="1080"/>
+		</screen>
+		<!-- Add overlayNight on top of bezel -->
+		<element ref="overlay_night">
+			<bounds x="0" y="0" width="1920" height="1080"/>
+		</element>
+		<!-- Left portrait -->
+		<element id="pt_p1" ref="portrait_left">
+			<bounds x="35" y="5" width="180" height="953"/>
+		</element>
+		<!-- Right portrait -->
+		<element id="pt_p2" ref="portrait_right">
+			<bounds x="1705" y="5" width="180" height="953"/>
+		</element>
+	</view>
+
+	<!-- Lights Out -->
+	<view name="Lights Out">
+		<screen index="0">
+			<bounds x="240" y="30" width="1440" height="1022"/>
+		</screen>
+	<element ref="Background">
+			<bounds x="0" y="0" width="1920" height="1080"/>
+		</element>
+		<element ref="Bezel">
+			<bounds x="0" y="0" width="1920" height="1080"/>
+		</element>
+	</view>
+
+	<script><![CDATA[
+		file:set_resolve_tags_callback(
+			function()
+				local cpu = file.device:subdevice(":maincpu")
+				local mem = cpu.spaces["program"]
+				
+				-- Function to setup character portraits for a view
+				local function setup_view_portraits(view_name)
+					local view = file.views[view_name]
+					if not view then return end
+					
+					local p1char = view.items["pt_p1"]
+					local p2char = view.items["pt_p2"]
+					if not p1char or not p2char then return end
+					
+					-- Variant override memory locations (must match plugin)
+					local p1_override_active = 0xFF9000
+					local p1_override_state = 0xFF9001
+					local p2_override_active = 0xFF9002
+					local p2_override_state = 0xFF9003
+					
+					view:set_prepare_items_callback(
+						function()
+							local p1_state, p2_state
+							
+							-- Check if P1 variant override is active
+							if mem:read_u8(p1_override_active) == 1 then
+								p1_state = mem:read_u8(p1_override_state)
+							else
+								-- Use original XMVSF character detection logic
+								if mem:read_u8(0xFF0080) == 1 or
+									(mem:read_u8(0xFF0000) ~= 0 and mem:read_u8(0xFFA005) == 255) or
+									(mem:read_u8(0xFFA005) == 100 and mem:read_u8(0xFF4403) == 1 and mem:read_u8(0xFF4003) == 1) then
+									p1_state = mem:read_u8(0xFF4053)
+								elseif mem:read_u8(0xFFA005) == 100 and mem:read_u8(0xFF4003) == 0 then	
+									p1_state = 0x26
+								else
+									p1_state = 0x26
+								end
+							end
+							
+							-- Check if P2 variant override is active
+							if mem:read_u8(p2_override_active) == 1 then
+								p2_state = mem:read_u8(p2_override_state)
+							else
+								-- Use original XMVSF character detection logic
+								if mem:read_u8(0xFF0080) == 1 or
+									(mem:read_u8(0xFF0000) ~= 0 and mem:read_u8(0xFFA005) == 255) or
+									(mem:read_u8(0xFFA005) == 100 and mem:read_u8(0xFF4403) == 1 and mem:read_u8(0xFF4003) == 1) then
+									p2_state = mem:read_u8(0xFF4453)
+								elseif mem:read_u8(0xFFA005) == 100 and mem:read_u8(0xFF4403) == 0 then
+									p2_state = 0x26
+								else
+									p2_state = 0x26
+								end
+							end
+							
+							p1char:set_state(p1_state)
+							p2char:set_state(p2_state)
+						end
+					)
+				end
+				
+				-- Setup portraits for all views
+				setup_view_portraits("XMVSF Bezel 4:3")
+				setup_view_portraits("XMVSF Bezel WS")
+				setup_view_portraits("XMVSF Bezel 4:3 Dark")
+				setup_view_portraits("XMVSF Bezel WS Dark")
+			end
+		)
+	]]></script>
+</mamelayout>
